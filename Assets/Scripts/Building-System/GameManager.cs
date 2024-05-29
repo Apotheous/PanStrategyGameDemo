@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
             //Debug.Log("wht is it Building?" + buildingToPlace.name);
             buildingToPlace = building;
             //Debug.Log("wht is it Building?" + buildingToPlace.name);
-            grid.SetActive(true);
+            //grid.SetActive(true);
         //}
     }
 }

@@ -29,7 +29,7 @@ public class GridManager : MonoBehaviour
             }
         }
     
-        _cam.transform.position = new Vector3((float)_width/6.5f -0.5f,(float)_height/6f -0.5f,-10);
+        //_cam.transform.position = new Vector3((float)_width/6.5f -0.5f,(float)_height/6f -0.5f,-10);
     }
 
     //public Tile GetTileAtPosition(Vector2 pos){
