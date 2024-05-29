@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1355124049234084304}
   - component: {fileID: 6681055384140144990}
   - component: {fileID: 28227820029283430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,10 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8ddab0d4a58a24fbdec3a7682e2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  goldIncrease: 0
-  timeBtwIncreases: 0
-  nextIncreasesTime: 0
 --- !u!114 &-1355124049234084304
 MonoBehaviour:
   m_ObjectHideFlags: 0
