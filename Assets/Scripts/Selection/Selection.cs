@@ -36,6 +36,28 @@ public class Selection : MonoBehaviour
 
             }
         }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("RightClick : " + selectedObject.name);
+            if (selectedObject!= null)
+            {
+                Debug.Log("RightClick1 : " + selectedObject.name);
+
+
+                    Debug.Log("RightClick2 : " + selectedObject.name);
+                    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity, selectableLayers);
+
+                        Debug.Log("RightClick3 : " + selectedObject.name);
+                        Unit b = selectedObject.GetComponent<Unit>();
+                        if (b != null)
+                        {
+                            Debug.Log("RightClick4 : " + selectedObject.name);
+                            b.Move(hit.point);
+                        }
+
+            }
+        }
     }
 
     public GameObject GetSelectedObject()
