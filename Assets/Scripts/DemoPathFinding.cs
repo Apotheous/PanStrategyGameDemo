@@ -10,32 +10,31 @@ public class DemoPathFinding : MonoBehaviour
 {
     public Transform endPos;
     public Transform startPos;
+    private Selection selectionManager;
     public Tilemap tilemap;
     public LineRenderer linePath;
     private List<Vector3> wayPoints;
     private void Start()
     {
-        
+        wayPoints = new List<Vector3>();
+        selectionManager = FindObjectOfType<Selection>();
+
     }
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(1))
         {
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
             endPos.position = mousePos;
-            wayPoints = AStar.FindPathClosest(tilemap,startPos.position,endPos.position);
+            wayPoints = AStar.FindPathClosest(tilemap, selectionManager.GetSelectedObject().transform.position,endPos.position);
             if (wayPoints != null )
             {
                 
                 linePath.positionCount = wayPoints.Count;
                 linePath.SetPositions(wayPoints.ToArray());
-                startPos.DOPath(wayPoints.ToArray(), 1f,PathType.CatmullRom);
-                //for (int i = 0; i < wayPoints.Count; i++)
-                //{
-                //    Debug.Log("Point : " + i + "Have position :" + wayPoints[i]);
-                //}
+                selectionManager.GetSelectedObject().transform.DOPath(wayPoints.ToArray(), 1f,PathType.Linear);
             }
         }
     }

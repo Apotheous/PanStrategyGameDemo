@@ -13,12 +13,14 @@ public class Unit : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        UnitSelections.Instance.unitList.Add(this.gameObject);
     }
 
-    void Update()
+    private void OnDestroy()
     {
-
+        UnitSelections.Instance.unitList.Remove(this.gameObject);
     }
+
     public void Move(Vector3 konum)
     {
         NavMeshHit hit;
