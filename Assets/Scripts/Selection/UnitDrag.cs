@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.EventSystems;
 
 public class UnitDrag : MonoBehaviour
 {
     Camera myCam;
-
     //graphical
     [SerializeField]
     RectTransform boxVisual;
@@ -15,6 +16,9 @@ public class UnitDrag : MonoBehaviour
 
     Vector2 startPosition;
     Vector2 endPosition;
+    public bool onCanvas;
+
+    public LayerMask selectableLayers; // Seçilebilir layer'lar
     void Start()
     {
         myCam = Camera.main;
@@ -27,27 +31,37 @@ public class UnitDrag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (!IsPointerOverUIObject())
+        //{
         //when clicked
-        if (Input.GetMouseButtonDown(0))
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity, selectableLayers);
+        if (hit.transform==null)
         {
-            startPosition = Input.mousePosition;
-            selectionBox = new Rect();
+            if (Input.GetMouseButtonDown(0))
+            {
+                startPosition = Input.mousePosition;
+                selectionBox = new Rect();
+            }
+            //when Dragging
+            if (Input.GetMouseButton(0))
+            {
+                endPosition = Input.mousePosition;
+                DrawVisual();
+                DrawSelection();
+            }
+            //when release click
+            if (Input.GetMouseButtonUp(0))
+            {
+                SelectUnits();
+                startPosition = Vector2.zero;
+                endPosition = Vector2.zero;
+                DrawVisual();
+            }
         }
-        //when Dragging
-        if (Input.GetMouseButton(0))
-        {
-            endPosition= Input.mousePosition;
-            DrawVisual();
-            DrawSelection();
-        } 
-        //when release click
-        if (Input.GetMouseButtonUp(0))
-        {
-            SelectUnits();
-            startPosition = Vector2.zero;
-            endPosition = Vector2.zero;
-            DrawVisual();
-        }
+        
+        //}
+        
     }
 
     void DrawVisual()
@@ -105,7 +119,12 @@ public class UnitDrag : MonoBehaviour
             }
         }
     }
-
-
-
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
+    }
 }
