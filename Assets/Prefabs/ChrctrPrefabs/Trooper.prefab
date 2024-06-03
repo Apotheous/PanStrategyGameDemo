@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: -4986107278356994928}
   - component: {fileID: -3792544754558830128}
   - component: {fileID: 8647536290671377999}
+  - component: {fileID: -7657487849510692302}
   m_Layer: 7
-  m_Name: spr_trooper
+  m_Name: Trooper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,8 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  can: 0
-  saldiri: 0
 --- !u!195 &8647536290671377999
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -185,6 +184,19 @@ NavMeshAgent:
   m_BaseOffset: 0.484375
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-7657487849510692302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427234494085827100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43aade6b176a91a4199a30fef97b70bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_Name: 
 --- !u!1 &9185367870639835181
 GameObject:
   m_ObjectHideFlags: 0

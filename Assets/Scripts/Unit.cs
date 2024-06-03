@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,17 @@ public class Unit : MonoBehaviour
 {
     private NavMeshAgent agent;
 
-    public float can;
-    public float saldiri;
+    public class Character
+    {
+        public int Health { get; set; }
+        public int Attack { get; set; }
+
+        public Character(int health, int attack)
+        {
+            Health = health;
+            Attack = attack;
+        }
+    }
 
     void Start()
     {
@@ -40,12 +50,6 @@ public class Unit : MonoBehaviour
             Debug.LogError("Agent is not on the NavMesh!");
         }
     }
-
-    //public void Move(Vector2 konum)
-    //{
-    //    agent.SetDestination(konum);
-    //}
-
     public void AgentBelirle()
     {
         agent = GetComponent<NavMeshAgent>();

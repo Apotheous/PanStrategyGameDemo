@@ -98,8 +98,9 @@ GameObject:
   - component: {fileID: 5102486773750781345}
   - component: {fileID: 7701860056157936674}
   - component: {fileID: 6766354146520225747}
+  - component: {fileID: -721091193036658035}
   m_Layer: 7
-  m_Name: Magician_0
+  m_Name: Magician
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,5 +245,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  can: 0
-  saldiri: 0
+--- !u!114 &-721091193036658035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837192413167964055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7a7f01b6f851d4f9332276320debe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
