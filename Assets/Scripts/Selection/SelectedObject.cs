@@ -11,6 +11,7 @@ public class SelectedObject : MonoBehaviour
 {
     public Image soldierImage;
     public Text soldierText;
+    public Text structureText;
     public Image buildingImage;
 
 
@@ -39,12 +40,9 @@ public class SelectedObject : MonoBehaviour
                     {
                         soldierImage.enabled = true;
                         Character selectCha = selectedUnit.GetComponent<Character>();
-
-
-                        soldierText.text= "Name = "+ (selectCha.name.ToString())+
+                        soldierText.text= "Name = "+ (selectCha.name.ToString()) +
                                           " Health = " + (selectCha.health.ToString()) +
                                           " Damage = " + (selectCha.damage.ToString());
-                        Debug.Log("Selected Object Layer = " + selectedUnit.transform.gameObject.layer.ToString());
                     }
                     else
                     {
@@ -56,7 +54,9 @@ public class SelectedObject : MonoBehaviour
                     if (buildingImage != null)
                     {
                         buildingImage.enabled = true;
-                        Debug.Log("Selected Object Layer = " + selectedUnit.transform.gameObject.layer.ToString());
+                        Structure selectStr = selectedUnit.GetComponent<Structure>();
+                        structureText.text = "Name = " + (selectStr.name.ToString()) +
+                                      " Health = " + (selectStr.health.ToString());
                     }
                     else
                     {
@@ -71,10 +71,12 @@ public class SelectedObject : MonoBehaviour
                 {
                     soldierImage.enabled = false;
                     soldierText.text = "No Soldiers Selected";
+                
                 }
                 if (buildingImage != null)
                 {
                     buildingImage.enabled = false;
+                    structureText.text = "No Structure Selected";
                 }
             }
         //}

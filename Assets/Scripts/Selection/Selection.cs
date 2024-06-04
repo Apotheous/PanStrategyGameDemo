@@ -23,8 +23,8 @@ public class Selection : MonoBehaviour
                 {
                     selectedObject.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = false;
                 }
-                selectedObject = hit.collider.gameObject;
-                Debug.Log("Selected Object: " + selectedObject.name);
+                    selectedObject = hit.collider.gameObject;
+                Debug.Log("Selected Object2233333: " + selectedObject.name);
                 selectedObject.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = true;
 
             }

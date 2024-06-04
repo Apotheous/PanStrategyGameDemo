@@ -28,6 +28,8 @@ public class DemoPathFinding : MonoBehaviour
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
             endPos.position = mousePos;
+            //Character slctChrctr = new Character();
+            //wayPoints = AStar.FindPathClosest(tilemap, selectionManager.GetSelectedObject().transform.position,endPos.position);
             wayPoints = AStar.FindPathClosest(tilemap, selectionManager.GetSelectedObject().transform.position,endPos.position);
             if (wayPoints != null )
             {

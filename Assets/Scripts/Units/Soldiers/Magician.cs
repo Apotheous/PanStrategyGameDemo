@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Magician : Character
 {
-    public override void Try()
+    public override void SetDamageValue()
     {
         damage = 2;
     }

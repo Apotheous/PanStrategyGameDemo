@@ -2491,7 +2491,7 @@ GameObject:
   - component: {fileID: 183253757}
   - component: {fileID: 183253756}
   m_Layer: 5
-  m_Name: SelectedSoldierInfo
+  m_Name: SoldierInfoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30190,7 +30190,7 @@ GameObject:
   - component: {fileID: 447504566}
   - component: {fileID: 447504565}
   m_Layer: 5
-  m_Name: SelectedBuildingInfo
+  m_Name: StructureInfoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32273,7 +32273,7 @@ GameObject:
   - component: {fileID: 584290708}
   - component: {fileID: 584290707}
   m_Layer: 5
-  m_Name: InformationMenuImage (1)
+  m_Name: StructureInfoMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39374,7 +39374,7 @@ GameObject:
   - component: {fileID: 1049610201}
   - component: {fileID: 1049610200}
   m_Layer: 5
-  m_Name: InformationMenuImage (2)
+  m_Name: SoldierInfoMenuImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48396,7 +48396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectableLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
 --- !u!1 &1627344125
 GameObject:
   m_ObjectHideFlags: 0
@@ -52971,6 +52971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soldierImage: {fileID: 183253756}
   soldierText: {fileID: 1739443433}
+  structureText: {fileID: 547143995}
   buildingImage: {fileID: 447504565}
 --- !u!1 &1919860683
 GameObject:

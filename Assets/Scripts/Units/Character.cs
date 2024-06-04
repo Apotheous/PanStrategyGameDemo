@@ -15,12 +15,12 @@ public abstract class Character : MonoBehaviour
     {
         obj_Name= gameObject.name;
         health = 10;
-        Try();
+        SetDamageValue();
     }
     //protected virtual void SetDamge(int damageValue)
     //{
     //    this.damage = damageValue;
     //}
 
-    public abstract void Try();
+    public abstract void SetDamageValue();
 }
