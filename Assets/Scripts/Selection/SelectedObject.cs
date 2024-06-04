@@ -25,61 +25,56 @@ public class SelectedObject : MonoBehaviour
  
     void Update()
     {
-        //if (Input.GetMouseButtonUp(0))
-        //{
-            Debug.Log("UnitSelectedList Count: " + UnitSelections.Instance.unitsSelected.Count);
-            if (UnitSelections.Instance.unitsSelected.Count == 1)
+        if (UnitSelections.Instance.unitsSelected.Count == 1)
+        {
+            GameObject selectedUnit = UnitSelections.Instance.unitsSelected[0];
+            if (selectedUnit.transform.gameObject.layer == 7)
             {
-                GameObject selectedUnit = UnitSelections.Instance.unitsSelected[0];
-                Debug.Log("Selected Unit333: " + selectedUnit.name);
-
-                if (selectedUnit.transform.gameObject.layer==7) 
-                {
-                    soldierImage.sprite = selectedUnit.GetComponent<SpriteRenderer>().sprite;
-                    if (soldierImage != null)
-                    {
-                        soldierImage.enabled = true;
-                        Character selectCha = selectedUnit.GetComponent<Character>();
-                        soldierText.text= "Name = "+ (selectCha.name.ToString()) +
-                                          " Health = " + (selectCha.health.ToString()) +
-                                          " Damage = " + (selectCha.damage.ToString());
-                    }
-                    else
-                    {
-                        Debug.LogWarning("SpriteRenderer component not found on the selected unit.");
-                    }
-                } if (selectedUnit.transform.gameObject.layer==6) 
-                {
-                    buildingImage.sprite = selectedUnit.GetComponent<SpriteRenderer>().sprite;
-                    if (buildingImage != null)
-                    {
-                        buildingImage.enabled = true;
-                        Structure selectStr = selectedUnit.GetComponent<Structure>();
-                        structureText.text = "Name = " + (selectStr.name.ToString()) +
-                                      " Health = " + (selectStr.health.ToString());
-                    }
-                    else
-                    {
-                        Debug.LogWarning("SpriteRenderer component not found on the selected unit.");
-                    }
-                }
-            }
-            else
-            {
-                // Eðer birden fazla seçili ünite varsa, SoldierRenderer'ý devre dýþý býrak
+                soldierImage.sprite = selectedUnit.GetComponent<SpriteRenderer>().sprite;
                 if (soldierImage != null)
                 {
-                    soldierImage.enabled = false;
-                    soldierText.text = "No Soldiers Selected";
-                
+                    soldierImage.enabled = true;
+                    Character selectCha = selectedUnit.GetComponent<Character>();
+                    soldierText.text = "Name = " + (selectCha.name.ToString()) +
+                                      " Health = " + (selectCha.health.ToString()) +
+                                      " Damage = " + (selectCha.damage.ToString());
                 }
-                if (buildingImage != null)
+                else
                 {
-                    buildingImage.enabled = false;
-                    structureText.text = "No Structure Selected";
+                    Debug.LogWarning("SpriteRenderer component not found on the selected unit.");
                 }
             }
-        //}
+            if (selectedUnit.transform.gameObject.layer == 6)
+            {
+                buildingImage.sprite = selectedUnit.GetComponent<SpriteRenderer>().sprite;
+                if (buildingImage != null)
+                {
+                    buildingImage.enabled = true;
+                    Structure selectStr = selectedUnit.GetComponent<Structure>();
+                    structureText.text = "Name = " + (selectStr.name.ToString()) +
+                                  " Health = " + (selectStr.health.ToString());
+                }
+                else
+                {
+                    Debug.LogWarning("SpriteRenderer component not found on the selected unit.");
+                }
+            }
+        }
+        else
+        {
+            //Eðer birden fazla seçili ünite varsa, SoldierRenderer'ý devre dýþý býrak
+                if (soldierImage != null)
+            {
+                soldierImage.enabled = false;
+                soldierText.text = "No Soldiers Selected";
+
+            }
+            if (buildingImage != null)
+            {
+                buildingImage.enabled = false;
+                structureText.text = "No Structure Selected";
+            }
+        }
     }
 
 }
