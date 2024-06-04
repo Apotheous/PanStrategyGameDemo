@@ -30,10 +30,11 @@ public class DemoPathFinding : MonoBehaviour
         {
             UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
             List<GameObject> selectedUnits = selectionManager2.GetUnitsSelected();
-            for (int i = 0; i < selectedUnits.Count; i++) {
-                Debug.Log("SelectedObjcetCount Start"+i);
-                foreach (GameObject unit in selectedUnits) { MoveForGlory(unit);Debug.Log("SelectedObjcetCount Finish"); }
-                
+ 
+            Debug.Log("PathFinding Start");
+            foreach (GameObject unit in selectedUnits) 
+            { 
+                MoveForGlory(unit);Debug.Log("PathFinding Finish " + unit.name); 
             }
         }
     }
@@ -41,13 +42,15 @@ public class DemoPathFinding : MonoBehaviour
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
+        mousePos.y = mousePos.y+ Random.Range(-0.75f, 0.75f);
+        mousePos.x = mousePos.x+ Random.Range(-0.75f, 0.75f);
         endPos.position = mousePos;
-        DebugText.text =mousePos.ToString();
+
         //wayPoints = AStar.FindPathClosest(tilemap, selectionManager.GetSelectedObject().transform.position,endPos.position);
         UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
         if (selectionManager2 != null)
         {
-            Debug.Log("SelectedObjcetCount Step1: " + obj.name);
+            Debug.Log("PathFinding Step1: " + obj.name);
             wayPoints = AStar.FindPathClosest(tilemap, obj.transform.position, endPos.position);
         }
         else
@@ -62,7 +65,7 @@ public class DemoPathFinding : MonoBehaviour
             //selectionManager.GetSelectedObject().transform.DOPath(wayPoints.ToArray(), 1f,PathType.Linear);
             if (selectionManager2 != null)
             {
-                Debug.Log("SelectedObjcetCount Step2: " + obj.name);
+                Debug.Log("PathFinding Step2: " + obj.name);
                 obj.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear);
             }
             else
