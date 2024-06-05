@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int gold;
-    public Text goldDisplay;
+
 
     private Building buildingToPlace;
     public GameObject grid;
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        goldDisplay.text=gold.ToString();
+
         if (Input.GetMouseButton(0)&&buildingToPlace!=null)
         {
             Tile nearesTile = null;

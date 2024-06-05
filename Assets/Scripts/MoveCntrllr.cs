@@ -11,7 +11,6 @@ public class MoveCntrllr : MonoBehaviour
     {
         selectionManager = FindObjectOfType<Selection>();
     }
-
     void Update()
     {
         if (Input.GetMouseButtonDown(1) && selectionManager.GetSelectedObject() != null)
@@ -21,7 +20,6 @@ public class MoveCntrllr : MonoBehaviour
             StartCoroutine(MoveToObject(selectedObject, targetPosition));
         }
     }
-
     private IEnumerator MoveToObject(GameObject obj, Vector2 targetPosition)
     {
         while ((Vector2)obj.transform.position != targetPosition)
