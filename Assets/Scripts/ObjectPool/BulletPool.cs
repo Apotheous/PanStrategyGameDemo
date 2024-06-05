@@ -19,6 +19,7 @@ public class BulletPool : MonoBehaviour
     {
         bullets[0].gameObject.SetActive(true);
         bullets[0].GetComponent<Rigidbody2D>().velocity = Vector2.right*1;
+        bullets[0].transform.SetParent(null);
         notListedObject = bullets[0];
 
         bullets.RemoveAt(0);
@@ -27,6 +28,7 @@ public class BulletPool : MonoBehaviour
     public void GetThePool()
     {
         bullets.Add(notListedObject);
+        notListedObject.transform.SetParent(desPos);
         notListedObject.transform.position= desPos.position;
         notListedObject.SetActive(false);
         Shoot();
