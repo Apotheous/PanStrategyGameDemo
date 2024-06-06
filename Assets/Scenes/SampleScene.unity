@@ -47275,36 +47275,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 175671995616979271, guid: 75493176e3d0a184298115cfb3cc17ff,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3049119575727024520, guid: 75493176e3d0a184298115cfb3cc17ff,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4461414000027074380, guid: 75493176e3d0a184298115cfb3cc17ff,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594936946698047202, guid: 75493176e3d0a184298115cfb3cc17ff,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6806927196727570661, guid: 75493176e3d0a184298115cfb3cc17ff,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7477967437318500894, guid: 75493176e3d0a184298115cfb3cc17ff,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8837192413167964055, guid: 75493176e3d0a184298115cfb3cc17ff,
         type: 3}
       propertyPath: m_Name
