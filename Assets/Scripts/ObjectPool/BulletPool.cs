@@ -8,6 +8,7 @@ public class BulletPool : MonoBehaviour
     public List<GameObject> bullets = new List<GameObject>();
     public Transform desPos;
     public int shootingTime;
+    public int bulletDamage;
     private GameObject notListedObject;
 
     private void Start()
@@ -21,6 +22,7 @@ public class BulletPool : MonoBehaviour
         bullets[0].GetComponent<Rigidbody2D>().velocity = Vector2.right*1;
         bullets[0].transform.SetParent(null);
         notListedObject = bullets[0];
+        notListedObject.GetComponent<BulletDamageHolder>().damage_Value = bulletDamage;
 
         bullets.RemoveAt(0);
         Invoke("GetThePool", shootingTime);
@@ -33,4 +35,5 @@ public class BulletPool : MonoBehaviour
         notListedObject.SetActive(false);
         Shoot();
     }
+    
 }
