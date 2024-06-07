@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 using Toolbox;
 using DG.Tweening;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 
 public class DemoPathFinding : MonoBehaviour
@@ -33,8 +34,12 @@ public class DemoPathFinding : MonoBehaviour
  
             Debug.Log("PathFinding Start");
             foreach (GameObject unit in selectedUnits) 
-            { 
-                MoveForGlory(unit);Debug.Log("PathFinding Finish " + unit.name); 
+            {
+                if (unit.transform.gameObject.layer == 7)
+                {
+                    MoveForGlory(unit); Debug.Log("PathFinding Finish " + unit.name);
+                }
+
             }
         }
     }

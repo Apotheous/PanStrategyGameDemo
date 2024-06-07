@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: -6327949794733112430}
   m_Layer: 6
   m_Name: Barrack
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,3 +270,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfbfa7ebb143c94ea6d9e8b153d1f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj_Name: 
+  health: 0

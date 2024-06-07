@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - water
+  - Building
+  - Soldier
   layers:
   - Default
   - TransparentFX
