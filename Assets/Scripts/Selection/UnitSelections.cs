@@ -10,6 +10,7 @@ public class UnitSelections : MonoBehaviour
     private static UnitSelections _instance;
     public static UnitSelections Instance { get { return _instance; } }
 
+    private GameObject _selectedUnit;
     private void Awake()
     {
         //if an instance of this already exits and it isn't this one
@@ -65,7 +66,9 @@ public class UnitSelections : MonoBehaviour
     {
 
     }
-
-
+    public List<GameObject> GetUnitsSelected()
+    {
+        return unitsSelected;
+    }
 
 }
