@@ -34,7 +34,10 @@ public class UnitClicks : MonoBehaviour
                 
                 //normal clicked
                 UnitSelections.Instance.ClickSelect(hit.collider.gameObject);
-
+                    if (hit.collider.tag=="Building")
+                    {
+                        BuildingSelected.Instance.ClickSelect(hit.collider.gameObject);
+                    }
                 }
 
             }

@@ -36,7 +36,13 @@ public class GameManager : MonoBehaviour
             }
             if (nearesTile.isOccupied == false) 
             {
-                Instantiate(buildingToPlace,nearesTile.transform.position,Quaternion.identity);
+                if(buildingToPlace.tag == "Building") {
+                    Instantiate(buildingToPlace, nearesTile.transform.position, Quaternion.identity);
+                    Debug.Log("SoldierSpawnerPoint"+buildingToPlace.name);
+
+                }
+
+                Debug.Log("SoldierSpawnerPoint" + buildingToPlace.name);
                 buildingToPlace = null;
                 nearesTile.isOccupied = true;
 
@@ -49,7 +55,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void SoldierSpawn(Building Soldier)
+    {
+        foreach (Transform t in BuildingSelected.Instance._selectedBuilding.transform)
+        {
+            if (t.name == "Spawner")
+            {
+                Instantiate(Soldier, t.transform.position, Quaternion.identity);
+            }
+        }
+    }
     public void BuyBuilding(Building building)
     {
         //if (gold>=building.cost)

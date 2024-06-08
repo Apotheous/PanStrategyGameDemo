@@ -1323,7 +1323,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1781944720}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: BuyBuilding
+          m_MethodName: SoldierSpawn
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: -1391975532284479605, guid: 04e96b5a2e771694b88728acb10c28f8,
@@ -38019,7 +38019,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1781944720}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: BuyBuilding
+          m_MethodName: SoldierSpawn
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: -4526445828348214700, guid: a6c60f4c027373a4a84655edbede2eb6,
@@ -43662,7 +43662,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1781944720}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: BuyBuilding
+          m_MethodName: SoldierSpawn
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 2109249369796629870, guid: 75493176e3d0a184298115cfb3cc17ff,
@@ -51147,6 +51147,7 @@ GameObject:
   - component: {fileID: 1791122900}
   - component: {fileID: 1791122899}
   - component: {fileID: 1791122901}
+  - component: {fileID: 1791122902}
   m_Layer: 0
   m_Name: Unit Selections
   m_TagString: Untagged
@@ -51200,6 +51201,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitList: []
   unitsSelected: []
+--- !u!114 &1791122902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791122898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c127249308307644b25b1487327156d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectedBuilding: {fileID: 0}
 --- !u!1 &1792027543
 GameObject:
   m_ObjectHideFlags: 0

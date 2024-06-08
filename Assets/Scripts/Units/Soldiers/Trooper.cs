@@ -17,9 +17,12 @@ public class Trooper : Character, IHittable
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        int dValue = collision.GetComponent<BulletDamageHolder>().damage_Value;
-        Debug.Log("Soldier on Damage");
-        GetHit(dValue, collision.gameObject);
+        if (collision.GetComponent<BulletDamageHolder>()!=null) 
+        { 
+            int dValue = collision.GetComponent<BulletDamageHolder>().damage_Value;
+            Debug.Log("Soldier on Damage");
+            GetHit(dValue, collision.gameObject);
+        }
     }
 
     public void Death(int health, GameObject sender)

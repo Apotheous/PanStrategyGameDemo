@@ -16,7 +16,6 @@ public class ProductionMenuManager : MonoBehaviour
     {
         foreach (Transform child in productionScr.transform)
         {
-            Debug.Log("Production Menu Items False = " + child.name);
             if (child.gameObject.activeSelf)
             {
                 child.gameObject.SetActive(false);

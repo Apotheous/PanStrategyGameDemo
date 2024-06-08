@@ -28,6 +28,7 @@ public class SelectedObject : MonoBehaviour
         if (UnitSelections.Instance.unitsSelected.Count == 1)
         {
             GameObject selectedUnit = UnitSelections.Instance.unitsSelected[0];
+
             if (selectedUnit.transform.gameObject.layer == 7)
             {
                 soldierImage.sprite = selectedUnit.GetComponent<SpriteRenderer>().sprite;
@@ -46,6 +47,7 @@ public class SelectedObject : MonoBehaviour
             }
             if (selectedUnit.transform.gameObject.layer == 6)
             {
+                
                 buildingImage.sprite = selectedUnit.GetComponent<SpriteRenderer>().sprite;
                 if (buildingImage != null)
                 {
