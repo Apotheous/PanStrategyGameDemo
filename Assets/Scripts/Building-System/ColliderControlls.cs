@@ -12,7 +12,6 @@ public class ColliderControlls : MonoBehaviour
         {
             boxCollider = gameObject.AddComponent<BoxCollider2D>();
         }
-
         // BoxCollider2D'yi tetikleyici olarak ayarlar
         boxCollider.isTrigger = true;
     }
@@ -22,26 +21,7 @@ public class ColliderControlls : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Player tetikleyiciye girdi.");
             other.GetComponent<Tile>().isOccupied= true;
-        }
-    }
-
-    // Tetikleyici içinde kalýndýðýnda her frame'de tetiklenir
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("Player tetikleyici içinde.");
-        }
-    }
-
-    // Tetikleyiciden çýkýldýðýnda tetiklenir
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("Player tetikleyiciden çýktý.");
         }
     }
 }
