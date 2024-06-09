@@ -65,7 +65,7 @@ public class SelectedObject : MonoBehaviour
         else
         {
             //Eðer birden fazla seçili ünite varsa, SoldierRenderer'ý devre dýþý býrak
-                if (soldierImage != null)
+            if (soldierImage != null)
             {
                 soldierImage.enabled = false;
                 soldierText.text = "No Soldiers Selected";

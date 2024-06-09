@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
             }
             if (nearesTile.isOccupied == false) 
             {
-                if(buildingToPlace.tag == "Building") 
+                if(buildingToPlace.tag == "Building") //**buildingToPlace.gameObject.layer==6
                 {
                     Instantiate(buildingToPlace, nearesTile.transform.position, Quaternion.identity);
                 }
