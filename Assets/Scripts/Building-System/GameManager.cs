@@ -7,20 +7,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int gold;
-
-
     private Building buildingToPlace;
     public GameObject grid;
     public CustomCursor cursor;
     public Tile[] tiles;
-    private void Start()
-    {
-
-        
-    }
     private void Update()
     {
-
         if (Input.GetMouseButton(0)&&buildingToPlace!=null)
         {
             Tile nearesTile = null;
@@ -36,22 +28,15 @@ public class GameManager : MonoBehaviour
             }
             if (nearesTile.isOccupied == false) 
             {
-                if(buildingToPlace.tag == "Building") {
+                if(buildingToPlace.tag == "Building") 
+                {
                     Instantiate(buildingToPlace, nearesTile.transform.position, Quaternion.identity);
-                    Debug.Log("SoldierSpawnerPoint"+buildingToPlace.name);
-
                 }
-
-                Debug.Log("SoldierSpawnerPoint" + buildingToPlace.name);
                 buildingToPlace = null;
                 nearesTile.isOccupied = true;
-
-                //grid.SetActive(false);
                 cursor.gameObject.SetActive(false);
                 Cursor.visible = true;
-
             }
-
         }
     }
 
@@ -67,16 +52,9 @@ public class GameManager : MonoBehaviour
     }
     public void BuyBuilding(Building building)
     {
-        //if (gold>=building.cost)
-        //{
             cursor.gameObject.SetActive(true);
             cursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;  
             Cursor.visible = false;
-            //gold-=building.cost;
-            //Debug.Log("wht is it Building?" + buildingToPlace.name);
             buildingToPlace = building;
-            //Debug.Log("wht is it Building?" + buildingToPlace.name);
-            //grid.SetActive(true);
-        //}
     }
 }

@@ -28,9 +28,11 @@ public class ProductionMenuManager : MonoBehaviour
     {
         UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
         List<GameObject> selectedUnits = selectionManager2.GetUnitsSelected();
+        GameObject selectedBuild = BuildingSelected.Instance._selectedBuilding;
         if (selectedUnits != null && selectedUnits.Count > 0)
         {
-            if (selectedUnits[0].name == "Central Building")
+            //if (selectedUnits != null && selectedUnits[0].name == "Central Building")//***---
+            if (selectedBuild != null && selectedBuild.name == "Central Building")//***---
             {
                 foreach (Transform child in productionScr.transform)
                 {
@@ -44,7 +46,7 @@ public class ProductionMenuManager : MonoBehaviour
                     }
                 }
             }
-            else if (selectedUnits[0].name == "Barrack(Clone)")
+            else if ( selectedUnits[0].name == "Barrack(Clone)")
             {
                 foreach (Transform child in productionScr.transform)
                 {
@@ -64,6 +66,7 @@ public class ProductionMenuManager : MonoBehaviour
             }
 
         }
+
 
     }
 }

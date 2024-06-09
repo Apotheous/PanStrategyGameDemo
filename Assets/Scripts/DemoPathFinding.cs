@@ -12,17 +12,14 @@ public class DemoPathFinding : MonoBehaviour
 {
     public Transform endPos;
     public Transform startPos;
-    private Selection selectionManager;
+    //private Selection selectionManager;
     public Tilemap tilemap;
     public LineRenderer linePath;
     private List<Vector3> wayPoints;
-
-    public Text DebugText;
-    //bool oneMoveOne =false;
     private void Start()
     {
         wayPoints = new List<Vector3>();
-        selectionManager = FindObjectOfType<Selection>();
+        //selectionManager = FindObjectOfType<Selection>();
     }
 
     private void Update()
@@ -31,13 +28,11 @@ public class DemoPathFinding : MonoBehaviour
         {
             UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
             List<GameObject> selectedUnits = selectionManager2.GetUnitsSelected();
- 
-            Debug.Log("PathFinding Start");
             foreach (GameObject unit in selectedUnits) 
             {
                 if (unit.transform.gameObject.layer == 7)
                 {
-                    MoveForGlory(unit); Debug.Log("PathFinding Finish " + unit.name);
+                    MoveForGlory(unit);
                 }
 
             }
@@ -55,14 +50,12 @@ public class DemoPathFinding : MonoBehaviour
         UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
         if (selectionManager2 != null)
         {
-            Debug.Log("PathFinding Step1: " + obj.name);
             wayPoints = AStar.FindPathClosest(tilemap, obj.transform.position, endPos.position);
         }
         else
         {
             Debug.LogWarning("UnitSelectionManager not found!");
         }
-        //
         if (wayPoints != null)
         {
             linePath.positionCount = wayPoints.Count;
@@ -70,7 +63,6 @@ public class DemoPathFinding : MonoBehaviour
             //selectionManager.GetSelectedObject().transform.DOPath(wayPoints.ToArray(), 1f,PathType.Linear);
             if (selectionManager2 != null)
             {
-                Debug.Log("PathFinding Step2: " + obj.name);
                 obj.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear);
             }
             else

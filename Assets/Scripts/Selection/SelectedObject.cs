@@ -29,7 +29,7 @@ public class SelectedObject : MonoBehaviour
         {
             GameObject selectedUnit = UnitSelections.Instance.unitsSelected[0];
 
-            if (selectedUnit.transform.gameObject.layer == 7)
+            if (selectedUnit != null && selectedUnit.transform.gameObject.layer == 7)//**---
             {
                 soldierImage.sprite = selectedUnit.GetComponent<SpriteRenderer>().sprite;
                 if (soldierImage != null)
@@ -45,7 +45,7 @@ public class SelectedObject : MonoBehaviour
                     Debug.LogWarning("SpriteRenderer component not found on the selected unit.");
                 }
             }
-            if (selectedUnit.transform.gameObject.layer == 6)
+            if (selectedUnit != null && selectedUnit.transform.gameObject.layer == 6)
             {
                 
                 buildingImage.sprite = selectedUnit.GetComponent<SpriteRenderer>().sprite;

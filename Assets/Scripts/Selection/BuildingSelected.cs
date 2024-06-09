@@ -29,7 +29,6 @@ public class BuildingSelected : MonoBehaviour
         DeselectAll();
         _selectedBuilding = unitToAdd;
         unitToAdd.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = true;
-        Debug.Log("unitToAdd" + unitToAdd.name);
     }
 
     public void DeselectAll()

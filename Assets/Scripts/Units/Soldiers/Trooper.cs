@@ -11,22 +11,19 @@ public class Trooper : Character, IHittable
     public void GetHit(int damageValue, GameObject sender)
     {
         health -= damageValue;
-        Debug.Log(sender.name);
         sender.SetActive(false);
         Death(health, this.gameObject);
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<BulletDamageHolder>()!=null) 
-        { 
+        if (collision.GetComponent<BulletDamageHolder>() != null)
+        {
             int dValue = collision.GetComponent<BulletDamageHolder>().damage_Value;
-            Debug.Log("Soldier on Damage");
             GetHit(dValue, collision.gameObject);
         }
     }
-
     public void Death(int health, GameObject sender)
     {
-        if (health == 0) { sender.SetActive(false); }
+        if (health <= 0) { Destroy(sender); UnitSelections.Instance.unitsSelected.Remove(sender); }
     }
 }

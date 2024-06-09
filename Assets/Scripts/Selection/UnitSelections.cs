@@ -31,7 +31,6 @@ public class UnitSelections : MonoBehaviour
         DeselectAll();
         unitsSelected.Add(unitToAdd);
         unitToAdd.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = true;
-        Debug.Log("unitToAdd" + unitToAdd.name);
     }
     public void ShiftClickSelect(GameObject unitToAdd)
     {
