@@ -6,53 +6,16 @@ using UnityEngine.AI;
 
 public class Unit : MonoBehaviour
 {
-    private NavMeshAgent agent;
 
-    public class Character
-    {
-        public int Health { get; set; }
-        public int Attack { get; set; }
-
-        public Character(int health, int attack)
-        {
-            Health = health;
-            Attack = attack;
-        }
-    }
-
+    public string _CountryCode;
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
         UnitSelections.Instance.unitList.Add(this.gameObject);
+        Debug.Log("Unit Country Code Start=" + _CountryCode);
     }
-
-    private void OnDestroy()
+    private void Update()
     {
-        UnitSelections.Instance.unitList.Remove(this.gameObject);
-    }
-
-    public void Move(Vector3 konum)
-    {
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas))
-        {
-            if (agent.isActiveAndEnabled)
-            {
-                agent.SetDestination(konum);
-            }
-            else
-            {
-                Debug.LogError("NavMeshAgent is not active!");
-            }
-        }
-        else
-        {
-            Debug.LogError("Agent is not on the NavMesh!");
-        }
-    }
-    public void AgentBelirle()
-    {
-        agent = GetComponent<NavMeshAgent>();
+        Debug.Log("Unit Country Code Update="+ _CountryCode);
     }
 }
 

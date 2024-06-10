@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 171874590361487496}
   - component: {fileID: 5339444845684791580}
+  - component: {fileID: 5852302729087937282}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -168,6 +169,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &5852302729087937282
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394608960297378747}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1 &6899058351456357854
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _CountryCode: 
 --- !u!114 &-6327949794733112430
 MonoBehaviour:
   m_ObjectHideFlags: 0

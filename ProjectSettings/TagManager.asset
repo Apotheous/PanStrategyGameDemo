@@ -8,6 +8,7 @@ TagManager:
   - water
   - Building
   - Soldier
+  - CountryColl
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - Unit
   - Water
   - Ground
-  - 
-  - 
-  - 
+  - CountryColl
+  - Spawner
+  - UnitsRange
   - 
   - 
   - 

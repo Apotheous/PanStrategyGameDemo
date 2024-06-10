@@ -13,10 +13,10 @@ public class BulletPool : MonoBehaviour
 
     private void Start()
     {
-        Shoot();
+
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         bullets[0].gameObject.SetActive(true);
         bullets[0].GetComponent<Rigidbody2D>().velocity = Vector2.right*1;
