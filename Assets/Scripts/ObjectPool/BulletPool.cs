@@ -6,6 +6,7 @@ using UnityEngine;
 public class BulletPool : MonoBehaviour
 {
     public List<GameObject> bullets = new List<GameObject>();
+    Transform myTransform;
     public Transform desPos;
     public int shootingTime;
     public int bulletDamage;
@@ -13,13 +14,14 @@ public class BulletPool : MonoBehaviour
 
     private void Start()
     {
+        myTransform =gameObject.transform;
         Shoot();
     }
 
     private void Shoot()
     {
         bullets[0].gameObject.SetActive(true);
-        bullets[0].GetComponent<Rigidbody2D>().velocity = Vector2.right*1;
+        bullets[0].GetComponent<Rigidbody2D>().AddForce(transform.right*15,ForceMode2D.Impulse);
         bullets[0].transform.SetParent(null);
         notListedObject = bullets[0];
         notListedObject.GetComponent<BulletDamageHolder>().damage_Value = bulletDamage;

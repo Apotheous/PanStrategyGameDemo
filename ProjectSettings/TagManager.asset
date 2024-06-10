@@ -8,6 +8,7 @@ TagManager:
   - water
   - Building
   - Soldier
+  - Enemy
   layers:
   - Default
   - TransparentFX
