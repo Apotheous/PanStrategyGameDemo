@@ -34291,7 +34291,7 @@ GameObject:
   - component: {fileID: 697288302}
   - component: {fileID: 697288305}
   - component: {fileID: 697288304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrack
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -34363,6 +34363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1802536605}
+  - {fileID: 1520904049}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34390,7 +34391,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -46776,6 +46777,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1520904048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1520904049}
+  - component: {fileID: 1520904050}
+  - component: {fileID: 1520904051}
+  m_Layer: 6
+  m_Name: CircleColl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1520904049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520904048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 697288303}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1520904050
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520904048}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &1520904051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520904048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d59d47e4b7a164f91f098ce7e38550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidingObjects: []
+  spawner: {fileID: 1802536604}
 --- !u!1 &1524710821
 GameObject:
   m_ObjectHideFlags: 0
@@ -50962,7 +51026,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {fileID: 124923792}
-  startPos: {fileID: 0}
   tilemap: {fileID: 784398049}
   linePath: {fileID: 573619302}
 --- !u!4 &1791122900
@@ -51179,7 +51242,7 @@ GameObject:
   - component: {fileID: 1802536605}
   - component: {fileID: 1802536606}
   - component: {fileID: 1802536607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawner
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -51268,6 +51331,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTrooper: {fileID: 4427234494085827100, guid: db6b5315289f9f748a5f3b03fd4a75b8,
     type: 3}
+  onDestroy: 0
+  InsLock: 0
 --- !u!1 &1805178863
 GameObject:
   m_ObjectHideFlags: 0
