@@ -13,7 +13,6 @@ public class EnemyBarracColl : MonoBehaviour
     public GameObject spawner;  
     private void Awake()
     {
-        
         //if an instance of this already exits and it isn't this one
         if (_instance != null && _instance != this)
         {

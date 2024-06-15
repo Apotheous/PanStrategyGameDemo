@@ -6,14 +6,7 @@ using Toolbox;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Tilemaps;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Tilemaps;
-using Toolbox;
-using DG.Tweening;
-using UnityEngine.UI;
-using Unity.VisualScripting;
+
 public class Unit : MonoBehaviour
 {
     private NavMeshAgent agent;

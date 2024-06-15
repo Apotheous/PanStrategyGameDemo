@@ -34,13 +34,11 @@ public class EnemySpawner : MonoBehaviour
     }
     IEnumerator Spawn()
     {
-
         yield return new WaitForSecondsRealtime(2f);
         if (InsLock)
         {
             Shoot();
         }
-        
     }
     public void Shoot()
     {
@@ -53,12 +51,5 @@ public class EnemySpawner : MonoBehaviour
         //Invoke("GetThePool", 2);
 
     }
-    public void GetThePool()
-    {
-        if (onDestroy)
-        {
-            Shoot();
-        }
 
-    }
 }
