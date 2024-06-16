@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     public bool onDestroy =false;
     public bool InsLock =false;
     GameObject barrackColl;
+    int soldierLimit=0;
+    bool soldierLimitBool=false;
 
     private void Start()
     {
@@ -30,10 +32,15 @@ public class EnemySpawner : MonoBehaviour
         {
             InsLock = false;
         }
+        if (soldierLimit>=15)
+        {
+            soldierLimitBool = true;
+        }
         
     }
     IEnumerator Spawn()
     {
+        
         yield return new WaitForSecondsRealtime(2f);
         if (InsLock)
         {
@@ -42,14 +49,17 @@ public class EnemySpawner : MonoBehaviour
     }
     public void Shoot()
     {
-        // Quaternion.Euler kullanarak y ekseninde 180 derece döndürülmüþ bir quaternion oluþtur
-        Quaternion rotation = Quaternion.Euler(0, 180, 0);
+        if (!soldierLimitBool)
+        {
+            // Quaternion.Euler kullanarak y ekseninde 180 derece döndürülmüþ bir quaternion oluþtur
+            Quaternion rotation = Quaternion.Euler(0, 180, 0);
 
-        // enemyTrooper'ý bu dönüþümle instantiate et
-        Instantiate(enemyTrooper, transform.position, rotation);
-        StartCoroutine(Spawn());
-        //Invoke("GetThePool", 2);
-
+            // enemyTrooper'ý bu dönüþümle instantiate et
+            Instantiate(enemyTrooper, transform.position, rotation);
+            soldierLimit++;
+            StartCoroutine(Spawn());
+            //Invoke("GetThePool", 2);
+        }
     }
 
 }

@@ -1414,6 +1414,7 @@ GameObject:
   - component: {fileID: 8500186312077402713}
   - component: {fileID: 4963047363948653032}
   - component: {fileID: 8898234473418834951}
+  - component: {fileID: 6936355907045017936}
   m_Layer: 0
   m_Name: NewObjectPool
   m_TagString: Untagged
@@ -1492,6 +1493,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.87
+--- !u!114 &6936355907045017936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469572746352197474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88da641b29c25242a647328a2005405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_Name: 
+  Damage: 5
+  damageHold: 0
 --- !u!1 &7787469141547827010
 GameObject:
   m_ObjectHideFlags: 0
