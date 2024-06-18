@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3155847454215548645}
   m_Layer: 7
   m_Name: DarkSamurai
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 4982460806293760195}
   m_Layer: 7
   m_Name: SelectedIMg
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

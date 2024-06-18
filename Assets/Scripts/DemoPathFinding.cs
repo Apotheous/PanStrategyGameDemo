@@ -11,7 +11,6 @@ using Unity.VisualScripting;
 public class DemoPathFinding : MonoBehaviour
 {
     public Transform endPos;
-    public Transform startPos;
     //private Selection selectionManager;
     public Tilemap tilemap;
     public LineRenderer linePath;
@@ -30,7 +29,7 @@ public class DemoPathFinding : MonoBehaviour
             List<GameObject> selectedUnits = selectionManager2.GetUnitsSelected();
             foreach (GameObject unit in selectedUnits) 
             {
-                if (unit.transform.gameObject.layer == 7)
+                if (unit.transform.gameObject.layer == 7 &&unit.tag=="Player")
                 {
                     MoveForGlory(unit);
                 }
