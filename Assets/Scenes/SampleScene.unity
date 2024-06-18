@@ -50695,7 +50695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Name: 
-  health: 50
+  health: 5000
 --- !u!1 &1778294971
 GameObject:
   m_ObjectHideFlags: 0
