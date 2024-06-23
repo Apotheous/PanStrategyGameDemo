@@ -4,16 +4,56 @@ using UnityEngine;
 
 public class PowerPlant : Structure, IHittable
 {
+    private SpriteRenderer spriteRenderer;
 
+    void Start()
+    {
+        // SpriteRenderer bileþenine eriþiyoruz
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+
+
+
+
+
+    public void SetTransparency(float alpha)
+    {
+        // Mevcut rengi alýyoruz
+        Color color = spriteRenderer.color;
+
+        // Alpha deðerini deðiþtiriyoruz (0: tamamen transparan, 1: tamamen opak)
+        color.a = alpha;
+
+        // Yeni rengi SpriteRenderer bileþenine uyguluyoruz
+        spriteRenderer.color = color;
+        StartCoroutine(Fade());
+    }
+
+    IEnumerator Fade()
+    {
+
+        yield return new WaitForSeconds(0.1f);
+        // Mevcut rengi alýyoruz
+        Color color = spriteRenderer.color;
+
+        // Alpha deðerini deðiþtiriyoruz (0: tamamen transparan, 1: tamamen opak)
+        color.a = 1;
+
+        // Yeni rengi SpriteRenderer bileþenine uyguluyoruz
+        spriteRenderer.color = color;
+    }
     public override void SetHealthValue()
     {
-        health = 50;
+        health = 5000;
     }
 
     public void GetHit(int damageValue, GameObject sender)
     {
         health -= damageValue;
         sender.SetActive(false);
+        SetTransparency(0.5f);
+        //BulletContact(sender);
         Death(health, this.gameObject);
     }
     public void OnTriggerEnter2D(Collider2D collision)
@@ -29,4 +69,15 @@ public class PowerPlant : Structure, IHittable
     {
         if (health <= 0) { sender.SetActive(false); BuildingSelected.Instance.DeselectAll(); }
     }
+
+
+    void BulletContact(GameObject bllt)
+    {
+        GameObject blltExp = bllt.transform.GetChild(0).gameObject;
+        blltExp.transform.SetParent(null);
+        blltExp.SetActive(true);
+        
+
+    }
+
 }

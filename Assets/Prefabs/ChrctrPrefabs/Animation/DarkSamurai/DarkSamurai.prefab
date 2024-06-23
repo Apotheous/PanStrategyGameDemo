@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2517127105370744143}
   - component: {fileID: -542279060987612776}
   - component: {fileID: -3155847454215548645}
+  - component: {fileID: -7917353768214474230}
   m_Layer: 7
   m_Name: DarkSamurai
   m_TagString: Player
@@ -35,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8975612301711345211}
+  - {fileID: 3334900968727294169}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -161,6 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  linePath: {fileID: 0}
 --- !u!114 &-3155847454215548645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +180,27 @@ MonoBehaviour:
   obj_Name: 
   health: 0
   damage: 0
+--- !u!95 &-7917353768214474230
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106926786904037681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd69ba5321664c0488e01705bcbf5255, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8528357285244297506
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,3 +285,108 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &4660409940338714724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4446598161753314772}
+    m_Modifications:
+    - target: {fileID: 904240632727869837, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_Name
+      value: GunnerSamurai
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471302326019666407, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7a046f4c0cbda9644b44e11ef7695003, type: 2}
+    - target: {fileID: 4632685181255900213, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7a046f4c0cbda9644b44e11ef7695003, type: 2}
+    - target: {fileID: 4644846124703453004, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7a046f4c0cbda9644b44e11ef7695003, type: 2}
+    - target: {fileID: 6020299708973590509, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7a046f4c0cbda9644b44e11ef7695003, type: 2}
+    - target: {fileID: 6239333652566050515, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7a046f4c0cbda9644b44e11ef7695003, type: 2}
+    - target: {fileID: 7383614679303600103, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7a046f4c0cbda9644b44e11ef7695003, type: 2}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77b910624a25d7048b29b15a91c47395, type: 3}
+--- !u!4 &3334900968727294169 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7992456559161383101, guid: 77b910624a25d7048b29b15a91c47395,
+    type: 3}
+  m_PrefabInstance: {fileID: 4660409940338714724}
+  m_PrefabAsset: {fileID: 0}

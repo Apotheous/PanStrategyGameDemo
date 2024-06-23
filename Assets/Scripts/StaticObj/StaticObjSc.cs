@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class StaticObjSc : MonoBehaviour
 {
     public Text debugText;
+    public GameObject Canvas;
     void Start()
     {
         debugText=GetComponent<Text>();
+        if (!Canvas.gameObject.activeSelf)
+        {
+            Canvas.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
