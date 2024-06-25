@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: -1391975532284479605}
   - component: {fileID: -3792544754558830128}
   - component: {fileID: -7657487849510692302}
-  - component: {fileID: 4948537007565499952}
   m_Layer: 7
   m_Name: Trooper
   m_TagString: Player
@@ -200,31 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Name: 
-  health: 0
+  health: 10
   damage: 0
---- !u!114 &4948537007565499952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4427234494085827100}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7275f8a0246b6dc4ebeed471cf058311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  desPos: {fileID: 0}
-  shootingTime: 2
-  bulletDamage: 5
-  isCalledShoot: 0
 --- !u!1 &9185367870639835181
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,10 +292,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8038771118654242948}
     m_Modifications:
+    - target: {fileID: 89962154799804670, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 238808338737417839, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082731663276445238, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     - target: {fileID: 1963354869939057263, guid: f9cfdf7bbad2e904181de3ec36144d49,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963354869939057263, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963354869939057263, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1963354869939057263, guid: f9cfdf7bbad2e904181de3ec36144d49,
         type: 3}
@@ -371,10 +372,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2671761034061250642, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012373931594408543, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626661099251847781, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     - target: {fileID: 8744114913870754655, guid: f9cfdf7bbad2e904181de3ec36144d49,
         type: 3}
       propertyPath: m_Name
       value: Gunner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744114913870754655, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744114913870754655, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9cfdf7bbad2e904181de3ec36144d49, type: 3}

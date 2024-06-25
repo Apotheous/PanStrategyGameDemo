@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
 
-public class NewObjectPool : MonoBehaviour
+public class DarkSamuraiAttacker : MonoBehaviour
 {
+    public GameObject swordColl;
+    public GameObject sword;
 
-    public List<GameObject> bullets = new List<GameObject>();
-    public Transform desPos;
-    public int shootingTime;
-    public int bulletDamage;
-    private GameObject notListedObject;
     private GameObject targetObject; // Temas ettiðimiz objeyi tutacak deðiþken
     private bool isCalledShoot;
-
+    public Animator unitAnimator;
     private void Start()
     {
         isCalledShoot = false;
+        unitAnimator.GetComponent<Animator>();
     }
 
     private void Update()
@@ -29,43 +26,31 @@ public class NewObjectPool : MonoBehaviour
 
     public void Shoot()
     {
-        if (bullets.Count > 0 && !isCalledShoot)
+        if (sword !=null && !isCalledShoot)
         {
             isCalledShoot = true;
 
-            GameObject bullet = bullets[0];
-            bullet.SetActive(true);
-            bullet.GetComponent<Rigidbody2D>().AddForce(transform.right * 15, ForceMode2D.Impulse);
-            bullet.transform.SetParent(null);
-            bullet.GetComponent<BulletDamageHolder>().damage_Value = bulletDamage;
+            //sword.GetComponent<BulletDamageHolder>().damage_Value = bulletDamage;
+            unitAnimator.SetTrigger("attack");
 
-            notListedObject = bullet;
-            bullets.RemoveAt(0);
-
-            Invoke("GetThePool", shootingTime);
+            Invoke("GetThePool", 2);
         }
     }
 
     public void GetThePool()
     {
-        if (notListedObject != null)
-        {
-            bullets.Add(notListedObject);
-            notListedObject.transform.SetParent(desPos);
-            notListedObject.transform.position = desPos.position;
-            notListedObject.SetActive(false);
-            notListedObject = null;
-        }
+        unitAnimator.SetTrigger("attack");
         isCalledShoot = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other != null && other.tag !=gameObject.tag)
+        if (other != null && other.tag != gameObject.tag)
         {
             if (targetObject == null) // targetObject boþ ise
             {
                 targetObject = other.gameObject; // Temas eden objeyi targetObject deðiþkenine ata
+
             }
 
         }
@@ -82,4 +67,14 @@ public class NewObjectPool : MonoBehaviour
 
         }
     }
+    public void SwordOn()
+    {
+        swordColl.SetActive(true);
+        
+    }    
+    public void SwordOff()
+    {
+        swordColl.SetActive(false);
+    }
+
 }

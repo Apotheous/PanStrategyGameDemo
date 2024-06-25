@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7586340414184136280}
   m_Layer: 0
   m_Name: Trooper Bullet (2)
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 2292203445704654019}
   m_Layer: 0
   m_Name: Trooper Bullet
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 2981037899346882146}
   m_Layer: 0
   m_Name: Trooper Bullet (3)
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -793,7 +793,6 @@ GameObject:
   - component: {fileID: -1391975532284479605}
   - component: {fileID: -3792544754558830128}
   - component: {fileID: -7657487849510692302}
-  - component: {fileID: 4948537007565499952}
   m_Layer: 7
   m_Name: TrooperEnemy
   m_TagString: Enemy
@@ -977,31 +976,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Name: 
-  health: 0
+  health: 10
   damage: 0
---- !u!114 &4948537007565499952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4427234494085827100}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7275f8a0246b6dc4ebeed471cf058311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  desPos: {fileID: 0}
-  shootingTime: 2
-  bulletDamage: 5
-  isCalledShoot: 0
 --- !u!1 &4572066683578133075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1099,7 @@ GameObject:
   - component: {fileID: 1294420198045893131}
   m_Layer: 0
   m_Name: Trooper Bullet (4)
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1382,7 +1358,7 @@ GameObject:
   - component: {fileID: 2134842644317897298}
   m_Layer: 0
   m_Name: Trooper Bullet (5)
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1529,13 +1505,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 418599623820901970}
-  - component: {fileID: 8500186312077402713}
   - component: {fileID: 4963047363948653032}
   - component: {fileID: 8898234473418834951}
   - component: {fileID: 6936355907045017936}
-  m_Layer: 0
+  - component: {fileID: 3508244398525495488}
+  m_Layer: 10
   m_Name: NewObjectPool
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1561,28 +1537,6 @@ Transform:
   m_Father: {fileID: 8038771118654242948}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8500186312077402713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469572746352197474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f156ee06e3957cc4eb1f2b7b62f1ed93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullets:
-  - {fileID: 1346433138943578138}
-  - {fileID: 8693031201570785199}
-  - {fileID: 840368193104069072}
-  - {fileID: 1582965059183724852}
-  - {fileID: 4719589401241468511}
-  - {fileID: 6786347274977311159}
-  desPos: {fileID: 418599623820901970}
-  shootingTime: 1
-  bulletDamage: 5
 --- !u!114 &4963047363948653032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,6 +1580,30 @@ MonoBehaviour:
   obj_Name: 
   Damage: 5
   damageHold: 0
+--- !u!114 &3508244398525495488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469572746352197474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbccf146f507fc48b17f221cef99cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 1346433138943578138}
+  - {fileID: 8693031201570785199}
+  - {fileID: 840368193104069072}
+  - {fileID: 1582965059183724852}
+  - {fileID: 4719589401241468511}
+  - {fileID: 6786347274977311159}
+  desPos: {fileID: 418599623820901970}
+  shootingTime: 1
+  bulletDamage: 2
+  targetTags:
+  - Player
 --- !u!1 &7903891104806054698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,7 +1725,7 @@ GameObject:
   - component: {fileID: 4315599051636034671}
   m_Layer: 0
   m_Name: Trooper Bullet (1)
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

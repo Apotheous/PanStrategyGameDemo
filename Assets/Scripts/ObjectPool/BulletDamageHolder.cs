@@ -48,7 +48,7 @@ public class BulletDamageHolder : MonoBehaviour
     }
     void BulletExplosixe(GameObject other,Vector2 hitPos)
     {
-        if (other.GetComponent<BoxCollider2D>() != null && other.tag == "Enemy")
+        if (other.GetComponent<BoxCollider2D>() != null && other.tag != gameObject.tag)
         {
             bulletExplsv = gameObject.transform.GetChild(0);
             bulletExplsv.SetParent(null);

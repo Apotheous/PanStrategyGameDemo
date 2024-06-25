@@ -1698,7 +1698,7 @@ GameObject:
   - component: {fileID: 8830167472789360423}
   - component: {fileID: 1188750619499603659}
   - component: {fileID: 4868684992512203990}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GunnerMagician
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1806,7 +1806,7 @@ GameObject:
   - component: {fileID: 7701860056157936674}
   - component: {fileID: 6766354146520225747}
   - component: {fileID: -721091193036658035}
-  - component: {fileID: 684229385947791297}
+  - component: {fileID: 586392057442137991}
   m_Layer: 7
   m_Name: Magician
   m_TagString: Player
@@ -1970,28 +1970,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Name: 
-  health: 0
+  health: 10
   damage: 0
---- !u!114 &684229385947791297
-MonoBehaviour:
+--- !u!95 &586392057442137991
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8837192413167964055}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7275f8a0246b6dc4ebeed471cf058311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullets:
-  - {fileID: 4900572542510319607}
-  - {fileID: 6532753014884433207}
-  - {fileID: 6460984499589114850}
-  - {fileID: 1306405727910919570}
-  - {fileID: 529305864371845701}
-  - {fileID: 1746319533704790638}
-  desPos: {fileID: 5133922944113414112}
-  shootingTime: 5
-  bulletDamage: 2
-  isCalledShoot: 0
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2003c662119aa3e4b9627b90e36fd290, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
