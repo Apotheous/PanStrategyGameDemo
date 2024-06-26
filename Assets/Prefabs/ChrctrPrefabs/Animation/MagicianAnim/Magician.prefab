@@ -1700,7 +1700,7 @@ GameObject:
   - component: {fileID: 4868684992512203990}
   m_Layer: 10
   m_Name: GunnerMagician
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1748,6 +1748,7 @@ MonoBehaviour:
   desPos: {fileID: 5354450088616160386}
   shootingTime: 1
   bulletDamage: 2
+  MomObject: {fileID: 8837192413167964055}
 --- !u!114 &8830167472789360423
 MonoBehaviour:
   m_ObjectHideFlags: 0

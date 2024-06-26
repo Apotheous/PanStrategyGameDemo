@@ -40,7 +40,7 @@ public class BulletDamageHolder : MonoBehaviour
             Debug.Log("Raycast hit: " + distance.ToString());
             //if (distance < 0.5f&&distance>0.4f) { BulletExplosixe(hit.transform.gameObject,hit.point); }
         }
-        Debug.DrawRay(transform.position, transform.right * raycastDistance, Color.red);
+        //Debug.DrawRay(transform.position, transform.right * raycastDistance, Color.red);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

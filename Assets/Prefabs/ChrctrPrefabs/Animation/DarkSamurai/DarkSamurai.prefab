@@ -216,7 +216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordColl: {fileID: 6629650349472582239}
   sword: {fileID: 6629650349472582239}
-  bulletDamage: 0
   unitAnimator: {fileID: -7917353768214474230}
 --- !u!1 &6629650349472582239
 GameObject:
