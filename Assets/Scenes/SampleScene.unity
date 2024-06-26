@@ -1148,10 +1148,10 @@ RectTransform:
   m_Father: {fileID: 695217294}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 66, y: -56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119647152
 MonoBehaviour:
@@ -37886,10 +37886,10 @@ RectTransform:
   m_Father: {fileID: 695217294}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 26, y: -56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916929709
 MonoBehaviour:
@@ -40998,10 +40998,10 @@ RectTransform:
   m_Father: {fileID: 695217294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 26, y: -20}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159654938
 MonoBehaviour:
@@ -43529,10 +43529,10 @@ RectTransform:
   m_Father: {fileID: 695217294}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 106, y: -20}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1332420047
 MonoBehaviour:
@@ -43813,10 +43813,10 @@ RectTransform:
   m_Father: {fileID: 695217294}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 66, y: -20}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337772763
 MonoBehaviour:
@@ -46903,7 +46903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1520904049
 Transform:
   m_ObjectHideFlags: 0
@@ -50582,7 +50582,8 @@ GameObject:
   - component: {fileID: 1777080788}
   - component: {fileID: 1777080791}
   - component: {fileID: 1777080792}
-  m_Layer: 0
+  - component: {fileID: 1777080793}
+  m_Layer: 6
   m_Name: PowerPlant
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -50649,7 +50650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777080787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.51, y: 1, z: 0}
+  m_LocalPosition: {x: 2.307, y: 3.049, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50696,6 +50697,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj_Name: 
   health: 5000
+--- !u!50 &1777080793
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777080787}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1778294971
 GameObject:
   m_ObjectHideFlags: 0
@@ -50946,6 +50968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugText: {fileID: 875716807}
+  Canvas: {fileID: 2100453579}
 --- !u!1 &1782923780
 GameObject:
   m_ObjectHideFlags: 0
@@ -51361,7 +51384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1802536605
 Transform:
   m_ObjectHideFlags: 0
@@ -51442,7 +51465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0526bcb8f33b094db3e603d5a89de4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTrooper: {fileID: 4427234494085827100, guid: db6b5315289f9f748a5f3b03fd4a75b8,
+  enemyTrooper: {fileID: 4427234494085827100, guid: 70dda3003e1c5f44994f984964d3955b,
     type: 3}
   onDestroy: 0
   InsLock: 0
@@ -55600,7 +55623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2100453580
 MonoBehaviour:
   m_ObjectHideFlags: 0

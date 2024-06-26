@@ -147,6 +147,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
+  raycastDistance: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  DebugText: {fileID: 0}
 --- !u!1 &4427234494085827100
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  linePath: {fileID: 0}
 --- !u!114 &-7657487849510692302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +377,7 @@ MonoBehaviour:
   desPos: {fileID: 8214206893355003373}
   shootingTime: 2
   bulletDamage: 5
+  isCalledShoot: 0
 --- !u!1 &6491858300090156024
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +525,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
+  raycastDistance: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  DebugText: {fileID: 0}
 --- !u!1 &6683595469019719015
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +677,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
+  raycastDistance: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  DebugText: {fileID: 0}
 --- !u!1 &7787469141547827010
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +829,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
+  raycastDistance: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  DebugText: {fileID: 0}
 --- !u!1 &8589843033217143646
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +981,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
+  raycastDistance: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  DebugText: {fileID: 0}
 --- !u!1 &8643429225446036118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,3 +1301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
+  raycastDistance: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  DebugText: {fileID: 0}
