@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
   linePath: {fileID: 0}
+  attackRange: 0.2
 --- !u!114 &-3155847454215548645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +265,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11741948, y: -0.029298306}
+  m_Offset: {x: 0.24348974, y: -0.03107214}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -275,7 +276,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.121498585, y: 0.17964411}
+  m_Size: {x: 0.5155573, y: 0.6834564}
   m_EdgeRadius: 0
 --- !u!114 &2877493987711886955
 MonoBehaviour:
@@ -378,7 +379,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.19
+  m_Radius: 0.3
 --- !u!114 &7573035086053640184
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DarkSamuraiAttacker : MonoBehaviour
@@ -20,13 +22,38 @@ public class DarkSamuraiAttacker : MonoBehaviour
     {
         if (targetObject != null)
         {
+
+            if (sword != null && !isCalledShoot)
+            {
+                isCalledShoot = true;
+                // Turn MomObject to face the targetObject without flipping upside down
+                Vector3 direction = targetObject.transform.position - gameObject.transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+                // Clamp the angle to prevent flipping
+                if (angle > 90 || angle < -90)
+                {
+
+                    //angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+                    gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                }
+                else { gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0)); }
+                //sword.GetComponent<BulletDamageHolder>().damage_Value = bulletDamage;
+                unitAnimator.SetTrigger("attack");
+
+                Invoke("GetThePool", 2);
+            }
             Shoot(); // targetObject dolu ise Shoot metodunu çaðýr
+        }
+                if (targetObject == null)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
     }
 
     public void Shoot()
     {
-        if (sword !=null && !isCalledShoot)
+        if (sword != null && !isCalledShoot)
         {
             isCalledShoot = true;
 
@@ -34,7 +61,24 @@ public class DarkSamuraiAttacker : MonoBehaviour
             unitAnimator.SetTrigger("attack");
 
             Invoke("GetThePool", 2);
+
         }
+
+    }
+    public void Shoot2()
+    {
+
+
+        
+        //if (sword != null && !isCalledShoot)
+        //{
+        //    isCalledShoot = true;
+
+        //    //sword.GetComponent<BulletDamageHolder>().damage_Value = bulletDamage;
+        //    unitAnimator.SetTrigger("attack");
+
+        //    Invoke("GetThePool", 2);
+        //}
     }
 
     public void GetThePool()
@@ -47,10 +91,17 @@ public class DarkSamuraiAttacker : MonoBehaviour
     {
         if (other != null && other.tag != gameObject.tag)
         {
+            gameObject.transform.DOKill();
             if (targetObject == null) // targetObject boþ ise
             {
+
                 targetObject = other.gameObject; // Temas eden objeyi targetObject deðiþkenine ata
 
+            }if (targetObject!=null)
+            {
+                Shoot();
+
+                
             }
 
         }
@@ -69,12 +120,15 @@ public class DarkSamuraiAttacker : MonoBehaviour
     }
     public void SwordOn()
     {
+
         swordColl.SetActive(true);
+ 
         
     }    
     public void SwordOff()
     {
         swordColl.SetActive(false);
+
     }
 
 }

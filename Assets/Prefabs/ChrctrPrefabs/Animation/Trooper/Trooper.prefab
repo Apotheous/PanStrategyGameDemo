@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
   linePath: {fileID: 0}
+  attackRange: 1.5
 --- !u!114 &-7657487849510692302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: layerMask.m_Bits
       value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317496045048891450, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7712041163409469028, guid: f9cfdf7bbad2e904181de3ec36144d49,
         type: 3}

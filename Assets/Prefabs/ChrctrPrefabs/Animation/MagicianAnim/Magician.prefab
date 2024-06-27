@@ -1776,7 +1776,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.87
+  m_Radius: 2
 --- !u!114 &4868684992512203990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1958,6 +1958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
   linePath: {fileID: 0}
+  attackRange: 1.5
 --- !u!114 &-721091193036658035
 MonoBehaviour:
   m_ObjectHideFlags: 0
