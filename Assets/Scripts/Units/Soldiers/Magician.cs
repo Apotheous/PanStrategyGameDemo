@@ -6,9 +6,11 @@ using UnityEngine;
 public class Magician : Character , IHittable
 {
     Animator unitAnimator;
+    HealthBar healthBar;
     private void Start()
     {
         unitAnimator = GetComponent<Animator>();
+        healthBar = gameObject.GetComponent<HealthBar>();
     }
     public override void SetDamageValue()
     {
@@ -22,6 +24,7 @@ public class Magician : Character , IHittable
             {
                 int dValue = collision.GetComponent<BulletDamageHolder>().damage_Value;
                 GetHit(dValue, collision.gameObject);
+                healthBar.UpdateHealth(-dValue);
                 unitAnimator.SetTrigger("onHit");
             }
         }
