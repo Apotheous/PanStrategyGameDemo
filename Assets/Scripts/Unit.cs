@@ -18,6 +18,7 @@ public class Unit : MonoBehaviour
     public Tilemap tilemap;
     public LineRenderer linePath;
     private List<Vector3> wayPoints;
+    public float attackRange;
     //*
 
     public class Character

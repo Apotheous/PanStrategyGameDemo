@@ -32,6 +32,7 @@ public class NewObjectPool : MonoBehaviour
             bullet.SetActive(true);
             bullet.transform.SetParent(null);
 
+
             // Calculate the direction to the target object
             Vector2 direction = (targetObject.transform.position - bullet.transform.position).normalized;
             bullet.GetComponent<Rigidbody2D>().AddForce(direction * 5, ForceMode2D.Impulse);
@@ -52,6 +53,7 @@ public class NewObjectPool : MonoBehaviour
             bullets.Add(notListedObject);
             notListedObject.transform.SetParent(desPos);
             notListedObject.transform.position = desPos.position;
+            notListedObject.transform.rotation = MomObject.transform.rotation;
             notListedObject.SetActive(false);
             notListedObject = null;
         }
@@ -74,6 +76,7 @@ public class NewObjectPool : MonoBehaviour
     {
         if (other != null && other.tag == "Enemy")
         {
+
             if (targetObject == other.gameObject) // Temas eden obje tetikleyiciden çýkarsa
             {
                 targetObject = null; // targetObject deðiþkenini boþalt

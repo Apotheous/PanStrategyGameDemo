@@ -4,6 +4,41 @@ using UnityEngine;
 
 public class CentralBuilding : Structure,IHittable
 {
+    private SpriteRenderer spriteRenderer;
+    HealthBar healthBar;
+
+    void Start()
+    {
+        // SpriteRenderer bileþenine eriþiyoruz
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        healthBar = gameObject.GetComponent<HealthBar>();
+    }
+    public void SetTransparency(float alpha)
+    {
+        // Mevcut rengi alýyoruz
+        Color color = spriteRenderer.color;
+
+        // Alpha deðerini deðiþtiriyoruz (0: tamamen transparan, 1: tamamen opak)
+        color.a = alpha;
+
+        // Yeni rengi SpriteRenderer bileþenine uyguluyoruz
+        spriteRenderer.color = color;
+        StartCoroutine(Fade());
+    }
+
+    IEnumerator Fade()
+    {
+
+        yield return new WaitForSeconds(0.1f);
+        // Mevcut rengi alýyoruz
+        Color color = spriteRenderer.color;
+
+        // Alpha deðerini deðiþtiriyoruz (0: tamamen transparan, 1: tamamen opak)
+        color.a = 1;
+
+        // Yeni rengi SpriteRenderer bileþenine uyguluyoruz
+        spriteRenderer.color = color;
+    }
     public override void SetHealthValue()
     {
         health = 100;
@@ -21,6 +56,7 @@ public class CentralBuilding : Structure,IHittable
         {
             int dValue = collision.GetComponent<BulletDamageHolder>().damage_Value;
             GetHit(dValue, collision.gameObject);
+            healthBar.UpdateHealth(-dValue);
         }
     }
     public void Death(int health, GameObject sender)

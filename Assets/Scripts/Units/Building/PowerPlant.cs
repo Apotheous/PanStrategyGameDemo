@@ -5,11 +5,13 @@ using UnityEngine;
 public class PowerPlant : Structure, IHittable
 {
     private SpriteRenderer spriteRenderer;
+    HealthBar healthBar;
 
     void Start()
     {
         // SpriteRenderer bileþenine eriþiyoruz
         spriteRenderer = GetComponent<SpriteRenderer>();
+        healthBar = gameObject.GetComponent<HealthBar>();
     }
 
 
@@ -62,6 +64,7 @@ public class PowerPlant : Structure, IHittable
         {
             int dValue = collision.GetComponent<BulletDamageHolder>().damage_Value;
             GetHit(dValue, collision.gameObject);
+            healthBar.UpdateHealth(-dValue);
         }
     }
 
