@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Name: 
-  health: 10
+  health: 100
 --- !u!114 &2316595367710611479
 MonoBehaviour:
   m_ObjectHideFlags: 0

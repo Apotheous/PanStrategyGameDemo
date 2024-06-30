@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Name: 
-  Damage: 5
+  Damage: 2
   damageHold: 0
 --- !u!1 &8837192413167964055
 GameObject:
@@ -1810,7 +1810,7 @@ GameObject:
   - component: {fileID: 586392057442137991}
   - component: {fileID: 8133805626579377331}
   m_Layer: 7
-  m_Name: Magician
+  m_Name: Soldier3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1975,7 +1975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj_Name: 
   health: 10
-  damage: 0
+  damage: 2
 --- !u!95 &586392057442137991
 Animator:
   serializedVersion: 5
