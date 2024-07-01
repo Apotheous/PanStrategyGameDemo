@@ -21,26 +21,9 @@ public class BulletDamageHolder : MonoBehaviour
     */
     Transform bulletExplsv;
     public int damage_Value;
-    public float raycastDistance = 10f;
-    public LayerMask layerMask; // Layer mask to filter the objects the ray can hit
-    public Text DebugText;
     private void Start()
     {
-        DebugText=FindAnyObjectByType<Text>();
-    }
-    private void Update()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, raycastDistance, layerMask);
-
-        if (hit.collider != null)
-        {
-            Debug.Log("Raycast hit: " + hit.collider.name);
-            // Implement additional logic here based on the hit
-            float distance = Vector2.Distance(transform.position, hit.point);
-            Debug.Log("Raycast hit: " + distance.ToString());
-            //if (distance < 0.5f&&distance>0.4f) { BulletExplosixe(hit.transform.gameObject,hit.point); }
-        }
-        //Debug.DrawRay(transform.position, transform.right * raycastDistance, Color.red);
+        bulletExplsv = gameObject.transform.GetChild(0);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -50,7 +33,6 @@ public class BulletDamageHolder : MonoBehaviour
     {
         if (other.GetComponent<BoxCollider2D>() != null && other.tag != gameObject.tag)
         {
-            bulletExplsv = gameObject.transform.GetChild(0);
             bulletExplsv.SetParent(null);
             // Set the position of bulletExplsv to the position of the current game object
             bulletExplsv.position = hitPos;

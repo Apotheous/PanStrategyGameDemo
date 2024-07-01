@@ -1564,9 +1564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1963354869939057263}
   - component: {fileID: 7712041163409469028}
-  - component: {fileID: 6489792280976549333}
   - component: {fileID: 7317496045048891450}
-  - component: {fileID: 9129627725889078637}
   m_Layer: 0
   m_Name: GunnerTrooper
   m_TagString: Untagged
@@ -1617,18 +1615,7 @@ MonoBehaviour:
   desPos: {fileID: 1963354869939057263}
   shootingTime: 1
   bulletDamage: 5
---- !u!114 &6489792280976549333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744114913870754655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5280d476462be34ca52a7fd5e161882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  momObject: {fileID: 0}
 --- !u!58 &7317496045048891450
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1645,18 +1632,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.87
---- !u!114 &9129627725889078637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744114913870754655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88da641b29c25242a647328a2005405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj_Name: 
-  Damage: 5
-  damageHold: 0

@@ -47,7 +47,7 @@ public class PowerPlant : Structure, IHittable
     }
     public override void SetHealthValue()
     {
-        health = 5000;
+        health = 50;
     }
 
     public void GetHit(int damageValue, GameObject sender)

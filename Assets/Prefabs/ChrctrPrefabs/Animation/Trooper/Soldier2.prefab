@@ -186,8 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
-  linePath: {fileID: 0}
   attackRange: 1.5
 --- !u!114 &-7657487849510692302
 MonoBehaviour:
@@ -203,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj_Name: 
   health: 10
-  damage: 5
+  damage: 0
 --- !u!114 &6281042692663644753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBarFill: {fileID: 3701635242168169258}
   _healthText: {fileID: 3229499658364461385}
-  _fillSpeed: 0.5
   _colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
@@ -444,6 +441,11 @@ PrefabInstance:
       propertyPath: MomObject
       value: 
       objectReference: {fileID: 4427234494085827100}
+    - target: {fileID: 7712041163409469028, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: momObject
+      value: 
+      objectReference: {fileID: 4427234494085827100}
     - target: {fileID: 8626661099251847781, guid: f9cfdf7bbad2e904181de3ec36144d49,
         type: 3}
       propertyPath: layerMask.m_Bits
@@ -464,7 +466,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9129627725889078637, guid: f9cfdf7bbad2e904181de3ec36144d49,
+        type: 3}
+      propertyPath: damageHold
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6489792280976549333, guid: f9cfdf7bbad2e904181de3ec36144d49, type: 3}
+    - {fileID: 9129627725889078637, guid: f9cfdf7bbad2e904181de3ec36144d49, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f9cfdf7bbad2e904181de3ec36144d49, type: 3}
 --- !u!4 &418599623820901970 stripped
 Transform:
@@ -588,11 +597,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4010628686509741185, guid: f2b64d8affcc24b4882f56ce6516f207,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b64d8affcc24b4882f56ce6516f207, type: 3}

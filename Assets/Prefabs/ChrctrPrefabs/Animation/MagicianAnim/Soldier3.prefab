@@ -1695,7 +1695,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5354450088616160386}
   - component: {fileID: 6643312679994188955}
-  - component: {fileID: 8830167472789360423}
   - component: {fileID: 1188750619499603659}
   - component: {fileID: 4868684992512203990}
   m_Layer: 10
@@ -1748,19 +1747,7 @@ MonoBehaviour:
   desPos: {fileID: 5354450088616160386}
   shootingTime: 1
   bulletDamage: 2
-  MomObject: {fileID: 8837192413167964055}
---- !u!114 &8830167472789360423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8323950126260757337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5280d476462be34ca52a7fd5e161882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  momObject: {fileID: 8837192413167964055}
 --- !u!58 &1188750619499603659
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1958,8 +1945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
-  linePath: {fileID: 0}
   attackRange: 1.5
 --- !u!114 &-721091193036658035
 MonoBehaviour:
@@ -2011,7 +1996,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBarFill: {fileID: 4488032434291238678}
   _healthText: {fileID: 2433936974064874869}
-  _fillSpeed: 0.5
   _colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}

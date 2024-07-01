@@ -166,8 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
-  linePath: {fileID: 0}
   attackRange: 0.2
 --- !u!114 &-3155847454215548645
 MonoBehaviour:
@@ -234,7 +232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBarFill: {fileID: 9216134226821783677}
   _healthText: {fileID: 6947343591811789342}
-  _fillSpeed: 0.5
   _colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
@@ -372,7 +369,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 906661243192946938}
-  - component: {fileID: 5600922072588805952}
   - component: {fileID: 8225491158685846191}
   - component: {fileID: 7573035086053640184}
   m_Layer: 10
@@ -398,18 +394,6 @@ Transform:
   m_Father: {fileID: 4446598161753314772}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5600922072588805952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994858477930885578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5280d476462be34ca52a7fd5e161882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &8225491158685846191
 CircleCollider2D:
   m_ObjectHideFlags: 0

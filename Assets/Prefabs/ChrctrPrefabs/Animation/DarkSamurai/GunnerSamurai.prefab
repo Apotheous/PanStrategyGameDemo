@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7992456559161383101}
   - component: {fileID: 2221251725304005814}
-  - component: {fileID: 3442310936103472903}
   - component: {fileID: 1178012209750024936}
   - component: {fileID: 821660867419647935}
   m_Layer: 0
@@ -169,18 +168,7 @@ MonoBehaviour:
   desPos: {fileID: 7992456559161383101}
   shootingTime: 1
   bulletDamage: 5
---- !u!114 &3442310936103472903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904240632727869837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5280d476462be34ca52a7fd5e161882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  momObject: {fileID: 0}
 --- !u!58 &1178012209750024936
 CircleCollider2D:
   m_ObjectHideFlags: 0

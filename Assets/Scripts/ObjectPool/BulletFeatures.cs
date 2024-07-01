@@ -5,9 +5,9 @@ using UnityEngine;
 public class BulletFeatures : Bullets
 {
 
-    public int damageHold;
+    //public int damageHold;
     public override void SetDamageValue()
     {
-        damageHold = Damage;
+        //damageHold = Damage;
     }
 }

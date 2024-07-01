@@ -11,10 +11,7 @@ public class DarkSamurai : Character,IHittable
         unitAnimator = GetComponent<Animator>();
         healthBar = gameObject.GetComponent<HealthBar>();
     }
-    public override void SetDamageValue()
-    {
-        damage = 10;
-    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != transform.tag)

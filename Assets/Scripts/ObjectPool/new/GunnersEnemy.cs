@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewOPCaller : MonoBehaviour
+public class GunnersEnemy : MonoBehaviour
 {
     public List<GameObject> bullets = new List<GameObject>();
     public Transform desPos;
@@ -11,6 +11,8 @@ public class NewOPCaller : MonoBehaviour
     private GameObject notListedObject;
     private GameObject targetObject; // Temas ettiðimiz objeyi tutacak deðiþken
     private bool isCalledShoot;
+    public GameObject momObject;
+
 
     [SerializeField]
     private List<string> targetTags; // Inspector'da düzenlenebilir tag listesi
@@ -79,7 +81,30 @@ public class NewOPCaller : MonoBehaviour
     {
         if (targetObject != null)
         {
+            // Turn MomObject to face the targetObject without flipping upside down
+            Vector3 direction = targetObject.transform.position - momObject.transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Clamp the angle to prevent flipping
+            if (angle > 90 || angle < -90)
+            {
+
+                //angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+                momObject.transform.rotation = Quaternion.Euler(new Vector3(-180, 0, -angle));
+            }
+            else { momObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle)); }
+
+
             Shoot(); // targetObject dolu ise Shoot metodunu çaðýr
         }
+        if (targetObject == null)
+        {
+            momObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
+
+        //if (targetObject != null)
+        //{
+        //    Shoot(); // targetObject dolu ise Shoot metodunu çaðýr
+        //}
     }
 }

@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int gold;
     private Building buildingToPlace;
-    public GameObject grid;
     public CustomCursor cursor;
     public Tile[] tiles;
     public float placementDistanceThreshold = 1.0f; // Threshold for building placement distance
