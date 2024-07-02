@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Tilemaps;
 
-public class Unit : MonoBehaviour
+public class Unit :Character //MonoBehaviour
 {
 
     //AgainMove
@@ -23,7 +23,8 @@ public class Unit : MonoBehaviour
         UnitSelections.Instance.unitList.Add(this.gameObject);
         tileMap = GameObject.Find("Walls");
         linePath = GameObject.Find("Line");
-
+        obj_Name = gameObject.name;
+        Debug.Log("Object Name = " + obj_Name + "Health =" + healthCharecter);
     }
 
     private void OnDestroy()

@@ -36,8 +36,8 @@ public class SelectedObject : MonoBehaviour
                 {
                     soldierImage.enabled = true;
                     Character selectCha = selectedUnit.GetComponent<Character>();
-                    soldierText.text = "Name = " + (selectCha.name.ToString()) +
-                                      " Health = " + (selectCha.health.ToString());
+                    soldierText.text = "Name = " + (selectCha.obj_Name.ToString()) +
+                                      " Health = " + (selectCha.healthCharecter.ToString());
                 }
                 else
                 {

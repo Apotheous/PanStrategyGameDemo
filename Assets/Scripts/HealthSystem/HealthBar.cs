@@ -7,24 +7,21 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private float _maxHealth = 100;
+    [SerializeField] private float _maxHealth;
     private float _currentHealth;
     [SerializeField] private Image _healthBarFill;
-    [SerializeField] private Text _healthText;
    // [SerializeField]
-    private float _fillSpeed=50f;
+    private float _fillSpeed=1F;
     [SerializeField] private Gradient _colorGradient;
 
     private void Start()
     {
         _currentHealth = _maxHealth;
-        _healthText.text = "Health : +" + _currentHealth;
     }
     public void UpdateHealth(float amount)
     {
         _currentHealth += amount;
         _currentHealth =Mathf.Clamp(_currentHealth, 0, _maxHealth);
-        _healthText.text = "Healtgh : " + _currentHealth;
         UpdateHealthBar();
     }
 

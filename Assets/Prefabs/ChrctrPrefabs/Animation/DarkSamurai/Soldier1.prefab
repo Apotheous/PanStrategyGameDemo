@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj_Name: 
+  healthCharecter: 10
   attackRange: 0.2
 --- !u!114 &-3155847454215548645
 MonoBehaviour:
@@ -180,8 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Name: 
-  health: 10
-  damage: 10
+  healthCharecter: 0
 --- !u!95 &-7917353768214474230
 Animator:
   serializedVersion: 5
@@ -230,8 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2c68a04e231d844a86733e73b1717c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 10
   _healthBarFill: {fileID: 9216134226821783677}
-  _healthText: {fileID: 6947343591811789342}
   _colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
@@ -334,11 +335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 10
-  raycastDistance: 0.1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 192
-  DebugText: {fileID: 0}
 --- !u!50 &6574776147272559014
 Rigidbody2D:
   serializedVersion: 4
@@ -424,7 +420,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj_Name: 
   Damage: 10
-  damageHold: 0
 --- !u!1 &8528357285244297506
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,18 +629,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 940947080309684338}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6947343591811789342 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7883276623884814956, guid: f2b64d8affcc24b4882f56ce6516f207,
-    type: 3}
-  m_PrefabInstance: {fileID: 940947080309684338}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9216134226821783677 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8280047282725099535, guid: f2b64d8affcc24b4882f56ce6516f207,
