@@ -115,7 +115,10 @@ public class UnitDrag : MonoBehaviour
             if (selectionBox.Contains(myCam.WorldToScreenPoint(unit.transform.position)))
             {
                 //if any unit is within the selection add them to selection
-                UnitSelections.Instance.DragSelect(unit);
+                if (unit.GetComponent<Unit>().healthCharecter>0)
+                {
+                    UnitSelections.Instance.DragSelect(unit);
+                }
             }
         }
     }

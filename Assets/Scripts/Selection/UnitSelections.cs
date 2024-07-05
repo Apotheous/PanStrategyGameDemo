@@ -57,7 +57,11 @@ public class UnitSelections : MonoBehaviour
     {
         foreach (GameObject unitToRemove in unitsSelected) 
         {
-            unitToRemove.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = false;
+            if (unitToRemove.activeSelf)
+            {
+                unitToRemove.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = false;
+            }
+
         }
         unitsSelected.Clear();
     }

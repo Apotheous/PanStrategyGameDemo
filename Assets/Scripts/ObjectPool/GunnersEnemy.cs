@@ -24,6 +24,7 @@ public class GunnersEnemy : MonoBehaviour
 
     public void Shoot()
     {
+
         if (bullets.Count > 0 && !isCalledShoot)
         {
             isCalledShoot = true;
@@ -94,8 +95,11 @@ public class GunnersEnemy : MonoBehaviour
             }
             else { momObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle)); }
 
+            if (momObject.GetComponent<Unit>().healthCharecter >= 0)
+            {
+                Shoot(); // targetObject dolu ise Shoot metodunu çaðýr
+            }
 
-            Shoot(); // targetObject dolu ise Shoot metodunu çaðýr
         }
         if (targetObject == null)
         {

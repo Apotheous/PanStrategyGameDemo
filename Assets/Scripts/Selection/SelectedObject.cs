@@ -14,13 +14,10 @@ public class SelectedObject : MonoBehaviour
     public Text structureText;
     public Image buildingImage;
 
-
     void Start()
     {
-        
         soldierImage.enabled=false;
         buildingImage.enabled=false;
-
     }
  
     void Update()
@@ -64,7 +61,7 @@ public class SelectedObject : MonoBehaviour
         else
         {
             //Eðer birden fazla seçili ünite varsa, SoldierRenderer'ý devre dýþý býrak
-                if (soldierImage != null)
+            if (soldierImage != null)
             {
                 soldierImage.enabled = false;
                 soldierText.text = "No Soldiers Selected";

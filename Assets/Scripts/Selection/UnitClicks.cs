@@ -5,12 +5,7 @@ using UnityEngine;
 public class UnitClicks : MonoBehaviour
 {
     public LayerMask selectableLayers; // Seçilebilir layer'lar
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -31,7 +26,6 @@ public class UnitClicks : MonoBehaviour
                 }
                 else
                 {
-                
                 //normal clicked
                 UnitSelections.Instance.ClickSelect(hit.collider.gameObject);
                     if (hit.collider.tag=="Building")
@@ -55,8 +49,6 @@ public class UnitClicks : MonoBehaviour
             //    }
 
             //}
-
         }
-        
     }
 }

@@ -109,11 +109,7 @@ public class DemoPathFinding : MonoBehaviour
 
     void MoveForAttack(GameObject unit, Vector3 enemyPosition)
     {
-        //enemyPosition.z = 0;
-        //enemyPosition.y -= 2f;
-        //enemyPosition.x -= 2f;
         endPos.position = enemyPosition;
-
         UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
         if (selectionManager2 != null)
         {

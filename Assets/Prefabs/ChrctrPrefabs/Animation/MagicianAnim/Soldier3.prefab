@@ -1215,7 +1215,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5133922944113414112}
-  - component: {fileID: 1210958145}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Player
@@ -1238,20 +1237,6 @@ Transform:
   m_Father: {fileID: 129837037107619696}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1210958145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6791033487359957056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88da641b29c25242a647328a2005405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj_Name: 
-  Damage: 2
 --- !u!1 &6834688697645788406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,7 +1650,6 @@ GameObject:
   - component: {fileID: 5354450088616160386}
   - component: {fileID: 6643312679994188955}
   - component: {fileID: 1188750619499603659}
-  - component: {fileID: 4868684992512203990}
   m_Layer: 10
   m_Name: GunnerMagician
   m_TagString: Player
@@ -1733,20 +1717,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &4868684992512203990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8323950126260757337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88da641b29c25242a647328a2005405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj_Name: 
-  Damage: 2
 --- !u!1 &8837192413167964055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,7 +1899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Name: 
-  healthCharecter: 0
+  healthCharecter: 10
 --- !u!95 &586392057442137991
 Animator:
   serializedVersion: 5

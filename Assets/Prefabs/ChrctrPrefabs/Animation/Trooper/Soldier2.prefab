@@ -283,6 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj_Name: 
   healthCharecter: 0
+  attackRange: 0
 --- !u!114 &6281042692663644753
 MonoBehaviour:
   m_ObjectHideFlags: 0

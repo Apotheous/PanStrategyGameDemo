@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj_Name: 
   healthCharecter: 10
-  attackRange: 0.2
+  attackRange: 0.75
 --- !u!114 &-3155847454215548645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906661243192946938}
   - component: {fileID: 8225491158685846191}
-  - component: {fileID: 7573035086053640184}
+  - component: {fileID: 6264094720100192741}
   m_Layer: 10
   m_Name: Sword
   m_TagString: Player
@@ -406,7 +406,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!114 &7573035086053640184
+--- !u!114 &6264094720100192741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,11 +415,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7994858477930885578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88da641b29c25242a647328a2005405, type: 3}
+  m_Script: {fileID: 11500000, guid: 979bc72157f24bd4c8ac05d44d77969a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj_Name: 
-  Damage: 10
+  momObject: {fileID: 2106926786904037681}
+  trgtObject: {fileID: 0}
 --- !u!1 &8528357285244297506
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class DarkSamurai : Character,IHittable
     {
         unitAnimator = GetComponent<Animator>();
         healthBar = gameObject.GetComponent<HealthBar>();
+        obj_Name = gameObject.GetComponent<Unit>().obj_Name;
+        healthCharecter = gameObject.GetComponent<Unit>().healthCharecter;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
