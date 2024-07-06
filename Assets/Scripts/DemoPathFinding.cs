@@ -63,7 +63,7 @@ public class DemoPathFinding : MonoBehaviour
                     {
                         Vector3 enemyBuildingPosition = hit.transform.position;
                         DebugText.text = "Attacking building: " + hit.transform.name;
-                        MoveForAttack(unit, enemyBuildingPosition);
+                        MoveForAttack(unit, enemyBuildingPosition, 1.5f);
                     }
                     else
                     {
@@ -113,7 +113,7 @@ public class DemoPathFinding : MonoBehaviour
         }
     }
 
-    void MoveForAttack(GameObject unit, Vector3 enemyPosition)
+    void MoveForAttack(GameObject unit, Vector3 enemyPosition, float speed)
     {
         endPos.position = enemyPosition;
         UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
@@ -132,50 +132,16 @@ public class DemoPathFinding : MonoBehaviour
 
             if (selectionManager2 != null)
             {
-                unit.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear)
+
+                float distanceToTarget = Vector3.Distance(unit.transform.position, enemyPosition);
+
+                float duration = distanceToTarget / speed;
+                unit.transform.DOPath(wayPoints.ToArray(), duration, PathType.Linear)
                     .SetEase(Ease.Linear)
                     .OnUpdate(() =>
                     {
-                        float distanceToTarget = Vector3.Distance(unit.transform.position, enemyPosition);
-                        if (distanceToTarget <= unit.GetComponent<Unit>().attackRange)
-                        {
-                            unit.transform.DOKill(); // Stop the movement
-                            Debug.Log("Unit is within attack range. Stopping movement.");
-                        }
-                    });
-            }
-            else
-            {
-                Debug.LogWarning("UnitSelectionManager not found!");
-            }
-        }
-    }
-
-    void MoveForAttack(GameObject unit, Vector3 enemyPosition)
-    {
-        endPos.position = enemyPosition;
-        UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
-        if (selectionManager2 != null)
-        {
-            wayPoints = AStar.FindPathClosest(tilemap, unit.transform.position, endPos.position);
-        }
-        else
-        {
-            Debug.LogWarning("UnitSelectionManager not found!");
-        }
-        if (wayPoints != null)
-        {
-            linePath.positionCount = wayPoints.Count;
-            linePath.SetPositions(wayPoints.ToArray());
-
-            if (selectionManager2 != null)
-            {
-                unit.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear)
-                    .SetEase(Ease.Linear)
-                    .OnUpdate(() =>
-                    {
-                        float distanceToTarget = Vector3.Distance(unit.transform.position, enemyPosition);
-                        if (distanceToTarget <= unit.GetComponent<Unit>().attackRange)
+                        float distanceToTargetUpdate = Vector3.Distance(unit.transform.position, enemyPosition);
+                        if (distanceToTargetUpdate <= unit.GetComponent<Unit>().attackRange)
                         {
                             unit.transform.DOKill(); // Stop the movement
                             Debug.Log("Unit is within attack range. Stopping movement.");

@@ -46,7 +46,7 @@ public class ProductionMenuManager : MonoBehaviour
                     }
                 }
             }
-            else if ( selectedUnits[0].name == "Barrack(Clone)")
+            else if (selectedUnits[0] != null && selectedUnits[0].name == "Barrack(Clone)")
             {
                 foreach (Transform child in productionScr.transform)
                 {

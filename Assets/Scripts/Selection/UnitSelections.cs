@@ -55,13 +55,17 @@ public class UnitSelections : MonoBehaviour
     }
     public void DeselectAll()
     {
-        foreach (GameObject unitToRemove in unitsSelected) 
+        for (int i = unitsSelected.Count - 1; i >= 0; i--)
         {
-            if (unitToRemove.activeSelf)
+            GameObject unitToRemove = unitsSelected[i];
+            if (unitToRemove != null && unitToRemove.activeSelf)
             {
-                unitToRemove.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = false;
+                unitToRemove.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
             }
-
+            else
+            {
+                unitsSelected.RemoveAt(i); // Null veya silinmiþ nesneleri listeden kaldýr
+            }
         }
         unitsSelected.Clear();
     }
@@ -71,6 +75,7 @@ public class UnitSelections : MonoBehaviour
     }
     public List<GameObject> GetUnitsSelected()
     {
+        unitsSelected.RemoveAll(item => item == null); // Null olanlarý listeden kaldýr
         return unitsSelected;
     }
 
