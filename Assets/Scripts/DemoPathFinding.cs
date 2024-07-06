@@ -15,37 +15,73 @@ public class DemoPathFinding : MonoBehaviour
     public Tilemap tilemap;
     public LineRenderer linePath;
     private List<Vector3> wayPoints;
+
+
+    public GameObject attackingBuilding;
+
+    public LayerMask enemyBuildingLayerMask;
+    public Text DebugText;
+    public float attackRange = 2f; // Attack range
     private void Start()
     {
         wayPoints = new List<Vector3>();
-        //selectionManager = FindObjectOfType<Selection>();
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonUp(1))
         {
+            // Convert screen coordinates to world coordinates
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
+
+            // Raycast
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition2D, Vector2.zero, Mathf.Infinity, enemyBuildingLayerMask);
+            if (hit.collider != null)
+            {
+                if (hit.collider.CompareTag("Enemy"))
+                {
+                    Debug.Log("Enemy building is at the mouse position: " + hit.transform.name);
+                }
+                else
+                {
+                    Debug.Log("There is something else at the mouse position.");
+                }
+            }
+            else
+            {
+                Debug.Log("There is nothing at the mouse position.");
+            }
+
             UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
             List<GameObject> selectedUnits = selectionManager2.GetUnitsSelected();
-            foreach (GameObject unit in selectedUnits) 
+            foreach (GameObject unit in selectedUnits)
             {
-                if (unit.transform.gameObject.layer == 7 &&unit.tag=="Player")
+                if (unit.layer == 7 && unit.CompareTag("Player"))
                 {
-                    MoveForGlory(unit);
+                    if (unit != null && hit.collider != null)
+                    {
+                        Vector3 enemyBuildingPosition = hit.transform.position;
+                        DebugText.text = "Attacking building: " + hit.transform.name;
+                        MoveForAttack(unit, enemyBuildingPosition);
+                    }
+                    else
+                    {
+                        MoveForGlory(unit, 1.5f);
+                    }
                 }
-
             }
         }
     }
-    void MoveForGlory(GameObject obj)
+
+    void MoveForGlory(GameObject obj, float speed)
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        mousePos.y = mousePos.y+ Random.Range(-0.75f, 0.75f);
-        mousePos.x = mousePos.x+ Random.Range(-0.75f, 0.75f);
+        mousePos.y = mousePos.y + Random.Range(-0.75f, 0.75f);
+        mousePos.x = mousePos.x + Random.Range(-0.75f, 0.75f);
         endPos.position = mousePos;
 
-        //wayPoints = AStar.FindPathClosest(tilemap, selectionManager.GetSelectedObject().transform.position,endPos.position);
         UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
         if (selectionManager2 != null)
         {
@@ -59,10 +95,54 @@ public class DemoPathFinding : MonoBehaviour
         {
             linePath.positionCount = wayPoints.Count;
             linePath.SetPositions(wayPoints.ToArray());
-            //selectionManager.GetSelectedObject().transform.DOPath(wayPoints.ToArray(), 1f,PathType.Linear);
+
             if (selectionManager2 != null)
             {
-                obj.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear);
+                
+                float distance = Vector3.Distance(obj.transform.position, endPos.position);
+
+               
+                float duration = distance / speed;
+
+                obj.transform.DOPath(wayPoints.ToArray(), duration, PathType.Linear);
+            }
+            else
+            {
+                Debug.LogWarning("UnitSelectionManager not found!");
+            }
+        }
+    }
+
+    void MoveForAttack(GameObject unit, Vector3 enemyPosition)
+    {
+        endPos.position = enemyPosition;
+        UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
+        if (selectionManager2 != null)
+        {
+            wayPoints = AStar.FindPathClosest(tilemap, unit.transform.position, endPos.position);
+        }
+        else
+        {
+            Debug.LogWarning("UnitSelectionManager not found!");
+        }
+        if (wayPoints != null)
+        {
+            linePath.positionCount = wayPoints.Count;
+            linePath.SetPositions(wayPoints.ToArray());
+
+            if (selectionManager2 != null)
+            {
+                unit.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear)
+                    .SetEase(Ease.Linear)
+                    .OnUpdate(() =>
+                    {
+                        float distanceToTarget = Vector3.Distance(unit.transform.position, enemyPosition);
+                        if (distanceToTarget <= unit.GetComponent<Unit>().attackRange)
+                        {
+                            unit.transform.DOKill(); // Stop the movement
+                            Debug.Log("Unit is within attack range. Stopping movement.");
+                        }
+                    });
             }
             else
             {
