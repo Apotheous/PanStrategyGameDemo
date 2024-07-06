@@ -56,29 +56,12 @@ public class DarkSamuraiAttacker : MonoBehaviour
         if (sword != null && !isCalledShoot)
         {
             isCalledShoot = true;
-
             //sword.GetComponent<BulletDamageHolder>().damage_Value = bulletDamage;
             unitAnimator.SetTrigger("attack");
-
             Invoke("GetThePool", 2);
 
         }
 
-    }
-    public void Shoot2()
-    {
-
-
-        
-        //if (sword != null && !isCalledShoot)
-        //{
-        //    isCalledShoot = true;
-
-        //    //sword.GetComponent<BulletDamageHolder>().damage_Value = bulletDamage;
-        //    unitAnimator.SetTrigger("attack");
-
-        //    Invoke("GetThePool", 2);
-        //}
     }
 
     public void GetThePool()
@@ -91,7 +74,7 @@ public class DarkSamuraiAttacker : MonoBehaviour
     {
         if (other != null && other.tag != gameObject.tag)
         {
-            gameObject.transform.DOKill();
+            //gameObject.transform.DOKill();
             if (targetObject == null) // targetObject boþ ise
             {
 
@@ -100,10 +83,7 @@ public class DarkSamuraiAttacker : MonoBehaviour
             }if (targetObject!=null)
             {
                 Shoot();
-
-                
             }
-
         }
     }
 

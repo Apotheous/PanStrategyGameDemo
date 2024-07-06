@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trooper : Character, IHittable
+public class Trooper : Unit, IHittable
 {
     Animator unitAnimator;
     HealthBar healthBar;
@@ -10,11 +10,10 @@ public class Trooper : Character, IHittable
     {
         unitAnimator = GetComponent<Animator>();
         healthBar = gameObject.GetComponent<HealthBar>();
+        obj_Name = gameObject.GetComponent<Unit>().obj_Name;
+        healthCharecter = gameObject.GetComponent<Unit>().healthCharecter;
     }
-    public override void SetDamageValue()
-    {
-        damage = 2;
-    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != transform.tag)
@@ -22,21 +21,22 @@ public class Trooper : Character, IHittable
             if (collision.GetComponent<BulletDamageHolder>() != null)
             {
                 int dValue = collision.GetComponent<BulletDamageHolder>().damage_Value;
-                GetHit(dValue, collision.gameObject);
                 healthBar.UpdateHealth(-dValue);
+                GetHit(dValue, collision.gameObject);
+
                 unitAnimator.SetTrigger("onHit");
             }
         }
     }
     public void GetHit(int damageValue, GameObject sender)
     {
-        if (health > 0)
+        if (healthCharecter > 0)
         {
-            health -= damageValue;
+            healthCharecter -= damageValue;
             sender.SetActive(false);
         }
 
-        Death(health, this.gameObject);
+        Death(healthCharecter, this.gameObject);
     }
     public void Death(int health, GameObject sender)
     {
@@ -50,25 +50,4 @@ public class Trooper : Character, IHittable
             UnitSelections.Instance.unitsSelected.Remove(sender);
         }
     }
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.tag != transform.tag)
-    //    {
-    //        if (collision.GetComponent<BulletDamageHolder>() != null)
-    //        {
-    //            int dValue = collision.GetComponent<BulletDamageHolder>().damage_Value;
-    //            GetHit(dValue, collision.gameObject);
-    //        }
-    //    }
-    //}
-    //public void GetHit(int damageValue, GameObject sender)
-    //{
-    //    health -= damageValue;
-    //    sender.SetActive(false);
-    //    Death(health, this.gameObject);
-    //}
-    //public void Death(int health, GameObject sender)
-    //{
-    //    if (health <= 0) { Destroy(sender); UnitSelections.Instance.unitsSelected.Remove(sender); }
-    //}
 }

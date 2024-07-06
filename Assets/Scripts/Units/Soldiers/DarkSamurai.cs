@@ -10,11 +10,10 @@ public class DarkSamurai : Character,IHittable
     {
         unitAnimator = GetComponent<Animator>();
         healthBar = gameObject.GetComponent<HealthBar>();
+        obj_Name = gameObject.GetComponent<Unit>().obj_Name;
+        healthCharecter = gameObject.GetComponent<Unit>().healthCharecter;
     }
-    public override void SetDamageValue()
-    {
-        damage = 10;
-    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != transform.tag)
@@ -30,13 +29,13 @@ public class DarkSamurai : Character,IHittable
     }
     public void GetHit(int damageValue, GameObject sender)
     {
-        if (health>0)
+        if (healthCharecter > 0)
         {
-            health -= damageValue;
+            healthCharecter -= damageValue;
             sender.SetActive(false);
         }
 
-        Death(health, this.gameObject);
+        Death(healthCharecter, this.gameObject);
     }
     public void Death(int health, GameObject sender)
     {

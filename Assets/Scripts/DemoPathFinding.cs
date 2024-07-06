@@ -63,18 +63,18 @@ public class DemoPathFinding : MonoBehaviour
                     {
                         Vector3 enemyBuildingPosition = hit.transform.position;
                         DebugText.text = "Attacking building: " + hit.transform.name;
-                        MoveForAttack(unit, enemyBuildingPosition);
+                        MoveForAttack(unit, enemyBuildingPosition, 1.5f);
                     }
                     else
                     {
-                        MoveForGlory(unit);
+                        MoveForGlory(unit, 1.5f);
                     }
                 }
             }
         }
     }
 
-    void MoveForGlory(GameObject obj)
+    void MoveForGlory(GameObject obj, float speed)
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
@@ -98,7 +98,13 @@ public class DemoPathFinding : MonoBehaviour
 
             if (selectionManager2 != null)
             {
-                obj.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear);
+                
+                float distance = Vector3.Distance(obj.transform.position, endPos.position);
+
+               
+                float duration = distance / speed;
+
+                obj.transform.DOPath(wayPoints.ToArray(), duration, PathType.Linear);
             }
             else
             {
@@ -107,13 +113,9 @@ public class DemoPathFinding : MonoBehaviour
         }
     }
 
-    void MoveForAttack(GameObject unit, Vector3 enemyPosition)
+    void MoveForAttack(GameObject unit, Vector3 enemyPosition, float speed)
     {
-        //enemyPosition.z = 0;
-        //enemyPosition.y -= 2f;
-        //enemyPosition.x -= 2f;
         endPos.position = enemyPosition;
-
         UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
         if (selectionManager2 != null)
         {
@@ -130,12 +132,16 @@ public class DemoPathFinding : MonoBehaviour
 
             if (selectionManager2 != null)
             {
-                unit.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear)
+
+                float distanceToTarget = Vector3.Distance(unit.transform.position, enemyPosition);
+
+                float duration = distanceToTarget / speed;
+                unit.transform.DOPath(wayPoints.ToArray(), duration, PathType.Linear)
                     .SetEase(Ease.Linear)
                     .OnUpdate(() =>
                     {
-                        float distanceToTarget = Vector3.Distance(unit.transform.position, enemyPosition);
-                        if (distanceToTarget <= unit.GetComponent<Unit>().attackRange)
+                        float distanceToTargetUpdate = Vector3.Distance(unit.transform.position, enemyPosition);
+                        if (distanceToTargetUpdate <= unit.GetComponent<Unit>().attackRange)
                         {
                             unit.transform.DOKill(); // Stop the movement
                             Debug.Log("Unit is within attack range. Stopping movement.");

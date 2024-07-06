@@ -14,13 +14,10 @@ public class SelectedObject : MonoBehaviour
     public Text structureText;
     public Image buildingImage;
 
-
     void Start()
     {
-        
         soldierImage.enabled=false;
         buildingImage.enabled=false;
-
     }
  
     void Update()
@@ -36,9 +33,8 @@ public class SelectedObject : MonoBehaviour
                 {
                     soldierImage.enabled = true;
                     Character selectCha = selectedUnit.GetComponent<Character>();
-                    soldierText.text = "Name = " + (selectCha.name.ToString()) +
-                                      " Health = " + (selectCha.health.ToString()) +
-                                      " Damage = " + (selectCha.damage.ToString());
+                    soldierText.text = "Name = " + (selectCha.obj_Name.ToString()) +
+                                      " Health = " + (selectCha.healthCharecter.ToString());
                 }
                 else
                 {
@@ -65,7 +61,7 @@ public class SelectedObject : MonoBehaviour
         else
         {
             //Eðer birden fazla seçili ünite varsa, SoldierRenderer'ý devre dýþý býrak
-                if (soldierImage != null)
+            if (soldierImage != null)
             {
                 soldierImage.enabled = false;
                 soldierText.text = "No Soldiers Selected";

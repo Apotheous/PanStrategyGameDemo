@@ -148,11 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
-  raycastDistance: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 192
-  DebugText: {fileID: 0}
 --- !u!1 &1306405727910919570
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,11 +296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
-  raycastDistance: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 192
-  DebugText: {fileID: 0}
 --- !u!1 &1746319533704790638
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,11 +444,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
-  raycastDistance: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 192
-  DebugText: {fileID: 0}
 --- !u!1 &2777595113125085629
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,11 +698,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
-  raycastDistance: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 192
-  DebugText: {fileID: 0}
 --- !u!1 &5260001738527418213
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,11 +952,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
-  raycastDistance: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 192
-  DebugText: {fileID: 0}
 --- !u!1 &6532753014884433207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,11 +1100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Value: 0
-  raycastDistance: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 192
-  DebugText: {fileID: 0}
 --- !u!1 &6605304670720117046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,7 +1215,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5133922944113414112}
-  - component: {fileID: 1210958145}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Player
@@ -1268,21 +1237,6 @@ Transform:
   m_Father: {fileID: 129837037107619696}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1210958145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6791033487359957056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88da641b29c25242a647328a2005405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj_Name: 
-  Damage: 2
-  damageHold: 0
 --- !u!1 &6834688697645788406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,9 +1649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5354450088616160386}
   - component: {fileID: 6643312679994188955}
-  - component: {fileID: 8830167472789360423}
   - component: {fileID: 1188750619499603659}
-  - component: {fileID: 4868684992512203990}
   m_Layer: 10
   m_Name: GunnerMagician
   m_TagString: Player
@@ -1748,19 +1700,7 @@ MonoBehaviour:
   desPos: {fileID: 5354450088616160386}
   shootingTime: 1
   bulletDamage: 2
-  MomObject: {fileID: 8837192413167964055}
---- !u!114 &8830167472789360423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8323950126260757337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5280d476462be34ca52a7fd5e161882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  momObject: {fileID: 8837192413167964055}
 --- !u!58 &1188750619499603659
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1777,21 +1717,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &4868684992512203990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8323950126260757337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88da641b29c25242a647328a2005405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj_Name: 
-  Damage: 5
-  damageHold: 0
 --- !u!1 &8837192413167964055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,7 +1735,7 @@ GameObject:
   - component: {fileID: 586392057442137991}
   - component: {fileID: 8133805626579377331}
   m_Layer: 7
-  m_Name: Magician
+  m_Name: Soldier3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1958,8 +1883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b0325fa00b8d48aed4ac3763b0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
-  linePath: {fileID: 0}
+  obj_Name: 
+  healthCharecter: 10
   attackRange: 1.5
 --- !u!114 &-721091193036658035
 MonoBehaviour:
@@ -1974,8 +1899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Name: 
-  health: 10
-  damage: 0
+  healthCharecter: 10
 --- !u!95 &586392057442137991
 Animator:
   serializedVersion: 5
@@ -2009,9 +1933,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2c68a04e231d844a86733e73b1717c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 10
   _healthBarFill: {fileID: 4488032434291238678}
-  _healthText: {fileID: 2433936974064874869}
-  _fillSpeed: 0.5
   _colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
@@ -2160,18 +2083,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b64d8affcc24b4882f56ce6516f207, type: 3}
---- !u!114 &2433936974064874869 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7883276623884814956, guid: f2b64d8affcc24b4882f56ce6516f207,
-    type: 3}
-  m_PrefabInstance: {fileID: 5521433596731653913}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4488032434291238678 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8280047282725099535, guid: f2b64d8affcc24b4882f56ce6516f207,

@@ -12,10 +12,7 @@ public class Magician : Character , IHittable
         unitAnimator = GetComponent<Animator>();
         healthBar = gameObject.GetComponent<HealthBar>();
     }
-    public override void SetDamageValue()
-    {
-        damage = 2;
-    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != transform.tag)
@@ -31,13 +28,13 @@ public class Magician : Character , IHittable
     }
     public void GetHit(int damageValue, GameObject sender)
     {
-        if (health > 0)
+        if (healthCharecter > 0)
         {
-            health -= damageValue;
+            healthCharecter -= damageValue;
             sender.SetActive(false);
         }
 
-        Death(health, this.gameObject);
+        Death(healthCharecter, this.gameObject);
     }
     public void Death(int health, GameObject sender)
     {

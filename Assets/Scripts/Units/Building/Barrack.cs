@@ -41,7 +41,7 @@ public class Barrack : Structure, IHittable
     }
     public override void SetHealthValue()
     {
-        health = 100;
+        health = 10;
     }
     public void GetHit(int damageValue, GameObject sender)
     {
