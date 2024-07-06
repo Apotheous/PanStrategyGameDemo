@@ -67,14 +67,14 @@ public class DemoPathFinding : MonoBehaviour
                     }
                     else
                     {
-                        MoveForGlory(unit);
+                        MoveForGlory(unit, 1.5f);
                     }
                 }
             }
         }
     }
 
-    void MoveForGlory(GameObject obj)
+    void MoveForGlory(GameObject obj, float speed)
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
@@ -98,7 +98,51 @@ public class DemoPathFinding : MonoBehaviour
 
             if (selectionManager2 != null)
             {
-                obj.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear);
+                
+                float distance = Vector3.Distance(obj.transform.position, endPos.position);
+
+               
+                float duration = distance / speed;
+
+                obj.transform.DOPath(wayPoints.ToArray(), duration, PathType.Linear);
+            }
+            else
+            {
+                Debug.LogWarning("UnitSelectionManager not found!");
+            }
+        }
+    }
+
+    void MoveForAttack(GameObject unit, Vector3 enemyPosition)
+    {
+        endPos.position = enemyPosition;
+        UnitSelections selectionManager2 = FindObjectOfType<UnitSelections>();
+        if (selectionManager2 != null)
+        {
+            wayPoints = AStar.FindPathClosest(tilemap, unit.transform.position, endPos.position);
+        }
+        else
+        {
+            Debug.LogWarning("UnitSelectionManager not found!");
+        }
+        if (wayPoints != null)
+        {
+            linePath.positionCount = wayPoints.Count;
+            linePath.SetPositions(wayPoints.ToArray());
+
+            if (selectionManager2 != null)
+            {
+                unit.transform.DOPath(wayPoints.ToArray(), 1f, PathType.Linear)
+                    .SetEase(Ease.Linear)
+                    .OnUpdate(() =>
+                    {
+                        float distanceToTarget = Vector3.Distance(unit.transform.position, enemyPosition);
+                        if (distanceToTarget <= unit.GetComponent<Unit>().attackRange)
+                        {
+                            unit.transform.DOKill(); // Stop the movement
+                            Debug.Log("Unit is within attack range. Stopping movement.");
+                        }
+                    });
             }
             else
             {
